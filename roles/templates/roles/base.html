@@ -1,0 +1,56 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% trans "Roles" %} HOTS">
+    <link rel="stylesheet" href="{% static 'roles/css/roles.css' %}">
+    <title>{% trans "Roles" %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+        {% include 'site/navbar.html' %}
+    </header>
+    <main class="page-container">
+        <div>
+            <h1>{% trans "Roles" %}</h1>
+            <img src="https://renattop.github.io/image/game/roles/our.jpg" alt="" class="header">
+        </div>
+        <div>
+            <img src="https://renattop.github.io/image/game/roles/tank.png" alt="" class="type">
+            <p><b>{% trans "Tank" %}</b> — {% blocktrans %}heroes are formidable juggernauts that protect their team by absorbing attacks from the enemy and blocking their retreat.{% endblocktrans %}</p>
+        </div>
+        <div>
+            <img src="https://renattop.github.io/image/game/roles/bruzer.png" alt="" class="type">
+            <p><b>{% trans "Bruiser" %}</b> — {% blocktrans %}heroes are tough fighters that can also dish out damage.{% endblocktrans %}</p>
+        </div>
+        <div>
+            <img src="https://renattop.github.io/image/game/roles/dd.png" alt="" class="type">
+            <p><b>{% trans "Melee Assassin" %}</b> — {% blocktrans %}heroes are high-octane damage dealers that get up close and personal with their enemies.{% endblocktrans %}</p>
+        </div>
+        <div>
+            <img src="https://renattop.github.io/image/game/roles/rdd.png" alt="" class="type">
+            <p><b>{% trans "Ranged Assassin" %}</b> — {% blocktrans %}heroes are fragile damage dealers that attack their enemies from a safe distance.{% endblocktrans %}</p>
+        </div>
+        <div>
+            <img src="https://renattop.github.io/image/game/roles/support.png" alt="" class="type">
+            <p><b>{% trans "Support" %}</b> — {% blocktrans %}heroes provide boosts and other benefits to their teammates.{% endblocktrans %}</p>
+        </div>
+        <div>
+            <img src="https://renattop.github.io/image/game/roles/heal.png" alt="" class="type">
+            <p><b>{% trans "Healer" %}</b> — {% blocktrans %}heroes focus primarily on direct healing and damage mitigation.{% endblocktrans %}</p>
+        </div>
+        {% include 'site/disqus.html' %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+</body>
+
+</html>

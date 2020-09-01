@@ -1,0 +1,141 @@
+body {
+    background-color: #08000f !important;
+    max-width: 2000px;
+    display: block !important;
+    margin: 0 auto !important;
+    cursor: url(/cursors/cursor.cur), default !important;
+}
+
+
+div {
+    display: block;
+}
+
+img {
+    max-width: 850px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.title_min {
+    list-style-type: none !important;
+    margin: 0;
+    display: block;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    padding-inline-start: 0px !important;
+}
+
+h1 {
+    font-size: calc(2em + 1.2vw) !important;
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 6.5em;
+    color: white !important;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 1rem #009cff;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: calc(1em + 1.2vw);
+    color: white !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: calc(1em + 0.8vw);
+    color: white !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+p {
+    color: rgb(210, 210, 223);
+    text-shadow: 0 0 1rem #89d2ff;
+    font-size: calc(1em + 0.3vw);
+}
+
+
+
+.col {
+    background-color: #0b1133;
+    border: 1px solid #225999;
+    margin-top: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    max-width: 500px;
+}
+
+.image {
+    border: 2px solid #225999;
+    max-width: 70%;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.image:hover {
+    transition: 1.2s;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+a {
+    text-decoration: none !important;
+    cursor: url(/cursors/pointer.cur),pointer  !important;
+}
+
+.fav {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn_add {
+    margin-top: 50px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    background: rgb(38, 128, 81);
+    box-shadow: 0 -5px rgb(27, 97, 62) inset;
+    transition: 0.2s;
+}
+
+.btn_add:hover {
+    background: rgb(53, 167, 110);
+
+}
+.btn_add:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(27, 97, 62) inset;
+}
+
+.btn_del {
+    margin-top: 5px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    background: rgb(122, 36, 33);
+    box-shadow: 0 -5px rgb(90, 26, 24) inset;
+    transition: 0.2s;
+}
+
+.btn_del:hover {
+    background: rgb(122, 36, 33);
+
+}
+.btn_del:active {
+    background: rgb(122, 36, 33);
+    box-shadow: 0 3px rgb(90, 26, 24) inset;
+}

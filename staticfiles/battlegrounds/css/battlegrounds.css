@@ -1,0 +1,85 @@
+body {
+    background-color: #0a0114 !important;
+    max-width: 2000px;
+    display: block !important;
+    margin: 0 auto !important;
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+}
+
+div {
+    display: block;
+}
+
+.row {
+    margin: 0 auto !important;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem !important;
+    color: white !important;
+    font-weight: 700;
+    text-shadow: 0 0 1rem #009cff;
+    text-transform: uppercase;
+    padding-top: 2em;
+    padding-bottom: 7em;
+}
+
+h3 {
+    font-size: calc(1.2em + 0.8vw);
+}
+
+@media (max-width:350px) {
+    img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.col a {
+    text-decoration: none !important;
+    color: white !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-transform: uppercase;
+    cursor: url(https://renattop.github.io/cursors/pointer.cur),pointer  !important;
+}
+
+.top {
+    background: url(https://renattop.github.io/image/game/battlefield/bgtop.jpg) top center no-repeat !important;
+    background-size: auto;
+}
+
+@media (max-width:800px) {
+    .top {
+        background: url(https://renattop.github.io/image/game/battlefield/bgtopm.jpg) top center no-repeat !important;
+    }
+}
+
+.col {
+    max-width: 360px !important;
+    padding: 10px !important;
+    text-align: center;
+    border: #43286b solid 1px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+p {
+    text-transform: none;
+    font-size: calc(1.1em + 0.3vw);
+    color: rgb(92, 92, 199);
+    text-shadow: 0 0 1rem;
+}
+
+.col:hover {
+    box-shadow: 0 0 5rem rgb(5, 122, 218);
+    background: url(https://renattop.github.io/image/game/brawl/1.png);
+    background-size: 100%;
+}

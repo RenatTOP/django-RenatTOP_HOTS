@@ -1,0 +1,82 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% trans "Game modes" %} HOTS">
+    <link rel="stylesheet" href="{% static 'game_modes/css/game_modes.css' %}">
+    <title>{% trans "Game modes" %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+    {% include 'site/navbar.html' %}
+    </header>
+    <main class="page-container">
+        <div class="head">
+            <h1>{% trans "Game modes" %}</h1>
+            <p class="header">{% blocktrans %}The Nexus offers multiple ways to duke it out in objective-driven, fast-paced team on team battles. Find the mode that best suits your style and carve your path to glory!{% endblocktrans %}
+            </p>
+        </div>
+        <div class="big-con">
+            <h2>{% trans "Unranked" %}</h2>
+            <p class="header">{% blocktrans %}Want to get to know the game better or just relax with friends? <br> These modes are great for you will do.{% endblocktrans %}</p>
+        </div>
+        <div class="
+            {% if LANGUAGE_CODE == 'ru' %}
+                ai
+            {% else %}
+                ai_en
+            {% endif %}
+        " id="ai">
+            <h3>{% trans "Versus A.I." %}</h3>
+            <em>{% blocktrans %}Refine your skills{% endblocktrans %}</em>
+            <p class="txt-min">{% blocktrans %}In this mode, you fight computer-controlled opponents of scalable difficulty alongside your friends, or with other players via the matchmaking system. If you prefer to go at it solo, you just need to check the A.I. Teammates’ box. Playing in this mode will net you some experience, gold, and daily quest progress of gold.{% endblocktrans %}</p>
+        </div>
+        <div class="quick" id="quick">
+            <h3>{% trans "Quick match" %}</h3>
+            <em>{% trans "Ready to rumble" %}</em>
+            <p class="txt-min">{% blocktrans %}Select the hero you’d like to play, dive into the Quick Match queue, and get ready for a taste of the fast-paced, highly-competitive action the Nexus has to offer. The matchmaking system will pit you against opponents of similar skill. Playing in this mode will net you daily quest progress, as well as bonus gold and experience.{% endblocktrans %}</p>
+        </div>
+        <div class="brawl" id="brawl">
+            <h3>{% trans "Brawl" %}</h3>
+            <em>{% trans "All Bets Are Off" %}</em>
+            <p class="txt-min">{% blocktrans %}Each week, Heroes Brawl presents you with a new set of crazy mutators that turn everything you thought you knew about the game on its head. From unique battlegrounds to crazy team composition rules to completely rewritten rules of engagement, you’ll never know what’s in store!{% endblocktrans %}</p>
+        </div>
+        <div class="draft" id="draft">
+            <h3>{% trans "Unranked" %}</h3>
+            <em>{% trans "Play without losing your rating." %}</em>
+            <p class="txt-min">{% blocktrans %}With its own unique queue similar to Quick Match or Ranked modes, Unranked Draft will feature a pick and ban system similar to Hero League, no party restrictions, and its own unique MMR (Matchmaking Rating). Unranked Draft will be the preferred queue for players looking to draft with a few friends or play in a more structured environment than Quick Match but without the pressures of ranked play.{% endblocktrans %}</p>
+        </div>
+        <div class="big-con" id="ranked">
+            <h2>{% trans "Ranked" %}</h2>
+            <p class="header">{% blocktrans %}The greatest challenge within the Nexus await in the game’s ranked play modes. Defeat your enemies and climb the ranks all the way to Grand Master; prove your worth in battle and earn unique season rewards. To learn all there is to know about how to gain rank and dominate people, visit the Ranked Play page.{% endblocktrans %}</p>
+        </div>
+        <div>
+            <h3 class="nexus">{% trans "Storm League" %}</h3>
+            <h4 class="nexus">{% blocktrans %}Battle solo or with friends – Must have access to 16 heroes at level 5 or higher and an account level of 50 or higher.{% endblocktrans %}</h4>
+            <p class="nexus">{% blocktrans %}Fight alongside (and against) the best of the best solo, or bring friends in a party of up to five players and storm the Nexus together.{% endblocktrans %}</p>
+        </div>
+        <div class="big-con own-game" id="custom">
+            <h2>{% trans "Custom game" %}</h2>
+            <p class="header">{% blocktrans %}Set up a pre-arranged match where you get to pick the battleground, invite players, addA.I. opponents, teammates, and observers. Besides regular hero selection, this mode has a draft setting,where teams take turns picking heroes and no duplicates are allowed—just like in ranked games. Who getsto pick first can be decided by either a coin toss, or it can be selected manually by the match creator.{% endblocktrans %}
+                {% if LANGUAGE_CODE == 'ru' %}
+                    <img src="https://renattop.github.io/image/game/modes/own-game.jpg" alt="" class="img-own-game">
+                {% else %}
+                    <img src="https://renattop.github.io/image/game/modes/own-game-b(en).jpg" alt="" class="img-own-game">
+                {% endif %}
+            </p>
+        </div>
+        {% include 'site/disqus.html' %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+</body>
+
+</html>

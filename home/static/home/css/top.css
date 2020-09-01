@@ -1,0 +1,172 @@
+@font-face {
+    font-family: MinionPro-SemiboldIt;
+    src: url(../font/MinionPro-SemiboldIt.otf)  format("truetype"),
+    local('MinionPro-SemiboldIt');
+}
+
+* {
+    font-family: MinionPro-SemiboldIt !important;
+}
+
+/*Button "Back to top"*/
+
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 40px;
+    background: url(https://renattop.github.io/image/home/navigation_arrow_up.svg);
+    cursor: pointer;
+    display: none;
+    font-size: 0px;
+}
+
+.back_to_top-show {
+    display: block;
+}
+
+/* Customs cursors */
+
+body {
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+}
+
+.container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+a {
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+button {
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+/* Navbar fixation for scrolling */
+
+.container-fluid, .page-container {
+    padding-top: 155px !important;
+}
+
+@media(max-width:449px) {
+    .container-fluid, .page-container {
+        padding-top: 90px !important;
+    }
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar-button {
+    background-image: url('');
+    background-repeat: no-repeat;
+    width: 6px;
+    height: 0px
+}
+
+::-webkit-scrollbar-track {
+    background-color: #32312e;
+    box-shadow: 0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #140557;
+    box-shadow: 0px 1px 1px #0b0625;
+    background-image: url('https://yraaa.ru/_pu/24/59610063.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+::-webkit-resizer {
+    background-image: url('');
+    background-repeat: no-repeat;
+    width: 7px;
+    height: 0px
+}
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+/* Preloader */
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: linear-gradient(60deg, #04043a, #12093d, #210644, #2c0546, #340444);
+    background-size: 200% 200%;
+    animation: Gradient 1s infinite linear;
+    z-index: 10000;
+}
+
+.preloader__image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 170px;
+    margin-top: -85px;
+    margin-left: -100px;
+    text-align: center;
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}

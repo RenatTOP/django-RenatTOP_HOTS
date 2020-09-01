@@ -1,0 +1,26 @@
+{% load i18n %}
+<div>
+    <a class="source source-2 target target-1 switch" {% if h.title_en == 'Gall'%}href="Gall/"{% endif %}>
+    {% if h.title_en == 'Deathwing' %}
+        {% trans "Destroyer" %}
+    {% elif h.title_en == 'Valeera'%}
+        {% trans "Stealth" %}
+    {% elif h.title_en == 'Greymane'%}
+        {% trans "Worgen" %}
+    {% elif h.title_en == 'Cho'%}
+        {% trans "Gall" %}
+    {% endif %}
+    </a>
+</div>
+<div>
+    <a class="source source-1 target target-2 switch" {% if h.title_en == 'Cho'%}href="Cho/"{% endif %}>
+    {% if h.title_en == 'Deathwing' %}
+        {% trans "World Breaker" %}
+    {% elif h.title_en == 'Valeera'%}
+        {% trans "Standart" %}
+    {% elif h.title_en == 'Greymane'%}
+        {% trans "Greymane" %}
+    {% elif h.title_en == 'Gall'%}
+        {% trans "Cho" %}
+    {% endif %}</a>
+</div>

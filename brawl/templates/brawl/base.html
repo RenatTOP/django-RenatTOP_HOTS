@@ -1,0 +1,59 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% trans "Hero brawl" %} HOTS">
+    <link rel="stylesheet" href="{% static 'brawl/css/brawl.css' %}">
+    <title>{% trans "Hero brawl" %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+    {% include 'site/navbar.html' %}
+    </header>
+    <main class="page-container">
+        <div class="head">
+            <h1>{% trans "Hero brawl" %}</h1>
+            <p class="header">{% blocktrans %}The game mode that breaks all the rules!{% endblocktrans %}</p>
+            <p class="heading">
+                {% blocktrans %}In a nutshell, Heroes Brawl is Heroes of the Storm, seen through the lens of delightful madness. Play on unique maps with surreal twists and with custom rulesets that turn everything you thought you knew about the game on its head. Weekly rewards await. Take a break from the conquest of the Nexus, gather your friends, and check out what this new mode has to offer.{% endblocktrans %}
+            </p>
+        </div>
+        <div class="arena">
+            <h2 class="arena-header">{% blocktrans %}Arenas, mutators and single-lanes{% endblocktrans %}</h2>
+            <p class="arena-text">
+                {% blocktrans %}There are three kinds of Heroes Brawl battlegrounds: standard maps with mutators, brand-new arenas, and single-lane battlegrounds. All made specifically for Heroes Brawl.{% endblocktrans %}</p>
+        </div>
+        <div class="mutators">
+            <h2 class="mutators-header">{% blocktrans %}Mutators{% endblocktrans %}</h2>
+            <p class="mutators-heading">
+                {% blocktrans %}There is a substantial number of modifiers, <br> and we don’t want to spoil too much <br> of what’s coming. Suffice to say, expect these <br> gameplay modifiers to add completely new and <br> unexpected quirks to drastically change how you <br> play Heroes of the Storm.{% endblocktrans %}</p>
+        </div>
+        <div class="heroes">
+            <img src="https://renattop.github.io/image/game/brawl/hero-picks-layers.png" alt="" class="hero">
+            <h2 class="heroes-header">{% blocktrans %}Unique <br> Hero Selection{% endblocktrans %}</h2>
+            <p class="heroes-heading">
+                {% blocktrans %}We’re even switching up how you choose your hero! For each brawl, you may either have preset heroes, you may shuffle (pick your hero from a custom lineup), or pure random. Look for new hero selection modes coming soon.{% endblocktrans %}</p>
+        </div>
+        <div class="event">
+            <img src="https://renattop.github.io/image/game/brawl/rewards-bg-top.png" alt="" class="loot-top">
+            <img src="https://renattop.github.io/image/game/brawl/loot-reward.png" alt="" class="loot">
+            <h2 class="event-header">{% blocktrans %}Weekly rewards{% endblocktrans %}</h2>
+            <p class="event-heading">
+                {% blocktrans %}Throw the rules out the window with the most hectic, action-packed, unpredictable mode in Heroes of the Storm!{% endblocktrans %}</p>
+        </div>
+    {% include 'site/disqus.html' %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+<script src="{% static 'home/js/additem.js' %}"></script>
+</body>
+
+</html>

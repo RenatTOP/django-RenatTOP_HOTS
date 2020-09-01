@@ -1,0 +1,43 @@
+{% extends "registration/base.html" %}
+{% load i18n static %}
+{% block css %}{% static 'home/css/form.css' %}{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>{% trans "You're already logged in." %}</h1>
+    {% else %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>{% trans "Registration" %}</h1>
+        <div class="input-form">
+            <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"><label for="id_username">{% trans "Username" %}</label>
+        </div>
+        <div class="input-form">
+            <input type="email" name="email" maxlength="254" required="" id="id_email"><label for="id_email">{% trans "E-mail" %}</label>
+        </div>
+        <div class="input-form">
+            <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1"><label for="id_password1">{% trans "Password" %}</label>
+        </div>
+        <div class="input-form">
+            <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2"><label for="id_password2">{% trans "Password confirmation" %}</label>
+        </div>
+        <span class="helptext">
+            {% for error in form.errors.username %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </span>
+        <span class="helptext">
+            {% for error in form.errors.email %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </span>
+        <span class="helptext">
+            {% for error in form.errors.password2 %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </span>
+        <button type="submit">{% trans "Sign up" %}</button>
+    </form>
+    {% endif %}
+  </body>
+</html>
+{% endblock %}

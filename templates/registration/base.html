@@ -1,0 +1,27 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% block desc %}{% endblock %} HOTS">
+    <link rel="stylesheet" href="{% block css %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+        {% include 'site/navbar.html' %}
+    </header>
+    <main class="container-fluid">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+</body>
+</html>

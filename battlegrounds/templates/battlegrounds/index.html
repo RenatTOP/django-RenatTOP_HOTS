@@ -1,0 +1,43 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% trans "Battlegrounds" %} HOTS">
+    <link rel="stylesheet" href="{% static 'battlegrounds/css/battlegrounds.css' %}">
+    <title>{% trans "" %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+    {% include 'site/navbar.html' %}
+    </header>
+    <main class="container-fluid">
+        <div class="top">
+            <h1>{% trans "Battlegrounds" %}</h1>
+        </div>
+        <div class="row">
+            {% for b in bg|dictsort:'title' %}
+                <div class="col">
+                    <a href="{{b.url}}"><img
+                            src="{{ b.preview_url}}" alt="">
+                        <h3>{% trans b.title %}</h3>
+                        <p>{{ b.description|safe}}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        {% include 'site/disqus.html' %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

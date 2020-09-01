@@ -1,0 +1,45 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% trans "Heroes" %} HOTS">
+    <link rel="stylesheet" href="{% static 'heroes/css/heroes.css' %}">
+    <title>{% trans "Heroes" %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+    {% include 'site/navbar.html' %}
+    </header>
+    <div class="container-fluid">
+        <div>
+            <h1>{% trans "Heroes" %}</h1>
+        </div>
+        {% include 'heroes/includes/filter.html' %}
+        <div class="row" id="content">
+        {% for h in hero|dictsort:'title' %}
+            <div class="col mix {{h.points.u}} {{h.hero_type_en}} {{h.points.q}}">
+                <a href="{{h.title_en}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/{{h.title_en}}.png" alt="">
+                    <h3>{{h.title}}</h3>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+            {% include 'site/disqus.html' %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+    <script src="{% static 'heroes/js/jquery.lookingfor.min.js' %}"></script>
+    <script src="{% static 'heroes/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'heroes/js/mixitup-multifilter.min.js' %}"></script>
+    <script src="{% static 'heroes/js/heroes.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    {% include 'site/main_head.html' %}
+    <meta name="description" content="{% trans "Ranked: Storm League" %} HOTS">
+    <link rel="stylesheet" href="{% static 'rating/css/rating.css' %}">
+    <title>{% trans "Ranked: Storm League" %}</title>
+</head>
+
+<body>
+    {% include 'site/preloader.html' %}
+    <header>
+    {% include 'site/navbar.html' %}
+    </header>
+    <main class="page-container">
+        <div class="head">
+            <h1>{% trans "Ranked: Storm League" %}</h1>
+            <p>{% blocktrans %}Ranked play in Heroes of the Storm offers the greatest challenge within the Nexus, with epic end-of-season rewards for those who climb the tiers. There is a player level requirement of 50 for ranked games, so as soon as you've unlocked and leveled enough characters, it's time to fight for your place among the legends.{% endblocktrans %}</p>
+            <p class="heading">{% blocktrans %}Ready your characters, sharpen your reflexes, and prepare yourself for the greatest hero battle the nexus has ever seen.{% endblocktrans %}</p>
+        </div>
+        <div class="basics">
+            <h2>{% trans "The Basics" %}</h2>
+            <p class="basics-header">{% blocktrans %}How to gain ranks{% endblocktrans %}</p>
+            <p class="basics-heading">{% blocktrans %}In Heroes of the Storm, your skill level, or Rank, is expressed in the form of League Tiers and Divisions. At the start of each Season, a series of Placement Matches determines your initial rank. As you play ranked games, you gain (or lose) Rank Points. Earn enough rank points, and you'll get the chance to move up to the next division or tier by winning a Promotion Match. If you consistently lose points, you'll have a chance to defend your rank in a Demotion Match. Players at the top of the leaderboard enter first into the Master tier and ultimately Grand Master, where the best players in the world battle for glory.{% endblocktrans %}</p>
+        </div>
+        <div class="draft">
+            <h2>{% trans "Drafting Demystified" %}</h2>
+            <p class="draft-header">{% blocktrans %}On ranked team composition{% endblocktrans %}</p>
+            <p class="draft-heading">{% blocktrans %}It may be tempting to jump straight into Storm League, but before you do that, you should learn about one more thing. How you pick your hero in a ranked game follows different rules from Quick Matches. Instead of just selecting your favorite hero and clicking "Ready", both teams go through a selection process called a Draft. Each side takes turns banning and picking Heroes until 10 Heroes (5 for each team) have been selected. Once the draft is complete, the match begins.{% endblocktrans %}</p>
+        </div>
+        {% include 'site/disqus.html' %}
+    </main>
+    <footer>
+        {% include 'site/footer.html' %}
+    </footer>
+    <a class="back_to_top"></a>
+    {% include 'site/main_js.html' %}
+</body>
+
+</html>

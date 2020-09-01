@@ -1,0 +1,283 @@
+body {
+    background-color: #08000f !important;
+    max-width: 2500px;
+    margin: 0 auto !important;
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    overflow-x: hidden;
+}
+
+.col {
+    text-align: center !important;
+    margin-top: 1em;
+    font-size: 0;
+}
+
+h1 {
+    font-size: calc(2em + 2vw) !important;
+    color: #cce5ff !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-align: center;
+}
+
+h2 {
+    font-size: calc(1.5em + 1.2vw) !important;
+    padding-bottom: 20px;
+    color: #fff !important;
+    text-shadow: 0 0 6px #99f;
+}
+
+.rotation .mix h3 {
+    font-size: calc(1rem + 0.5vw) !important;
+    color: #fff !important;
+}
+
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    overflow-x: hidden;
+}
+
+.header {
+    background: url(https://renattop.github.io/image/home/bg.jpg) no-repeat;
+    background-size: cover !important;
+    background-position: center center !important;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 90vh;
+}
+
+@media (max-width:1200px) {
+    .header {
+        background: url(https://renattop.github.io/image/home/mbg.jpg) no-repeat;
+    }
+}
+
+@media (max-width:650px) {
+    .header {
+        background: url(https://renattop.github.io/image/home/bgm.jpg) no-repeat;
+    }
+}
+
+.headm {
+    display: none;
+}
+
+@media (max-width:380px) {
+    img {
+        max-width: 290px;
+        width: auto;
+    }
+}
+
+.head p {
+    text-align: center;
+    width: 100%;
+}
+
+p {
+    text-align: left;
+    font-size: 1.3rem;
+    color: #cce5ff !important;
+}
+
+.bg-top {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 180, 255, .25)), to(rgba(0, 180, 255, 0)));
+    background: linear-gradient(180deg, rgba(0, 180, 255, .25), rgba(0, 180, 255, 0));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.heroes .head {
+    display: none;
+}
+
+.heroes {
+    background: url(https://renattop.github.io/image/home/heroes-bg.jpg) no-repeat;
+    background-size: cover !important;
+    position: relative;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.rare img:hover {
+    border: #0070FF 3px solid;
+    border-radius: 200px;
+    box-shadow: #0070FF 0 0 25px 10px;
+    transition: all .3s ease;
+}
+
+.epic img:hover {
+    border: #A335EE 3px solid;
+    border-radius: 200px;
+    box-shadow: #A335EE 0 0 25px 10px;
+    transition: all .3s ease;
+}
+
+.leg img:hover {
+    border: #bf642f 3px solid;
+    border-radius: 200px;
+    box-shadow: #bf642f 0 0 25px 10px;
+    transition: all .3s ease;
+}
+
+.col img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #88b8ff;
+    -webkit-box-shadow: 0 0 10px rgba(51, 153, 255, .5);
+    box-shadow: 0 0 10px rgba(51, 153, 255, .5);
+    border-radius: 100px;
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+.battlegrounds {
+    background: url(https://renattop.github.io/image/home/battlegrounds-bg.jpg) no-repeat;
+    background-size: cover !important;
+    position: relative;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 25% 70%;
+}
+
+.bg-top h3 {
+    text-align: center !important;
+    font-size: calc(1rem + 0.8vw) !important;
+    color: #fff !important;
+    padding-top: 5px;
+}
+
+.game-modes {
+    background: url(https://renattop.github.io/image/home/modes-bg.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.game-modes h2, .game-modes h3, .game-modes p {
+    text-align: center !important;
+}
+
+.game-modes h2, .game-modes h3 {
+    padding-top: 20px;
+}
+
+.mode {
+    padding: 10px;
+    min-width: 200px;
+    width: 100%;
+}
+
+@media (max-width:950px) {
+    .battlegrounds {
+        display: block;
+        text-align: center;
+        grid-template-columns: 90%;
+    }
+    .battlegrounds-image {
+        margin-left: 0px !important;
+    }
+    .bg-top h3 {
+        display: none;
+    }
+    .heroes .head {
+        display: block;
+        font-size: calc(1rem + 0.8vw) !important;
+        color: #fff !important;
+        padding: 30px;
+    }
+    .heroes {
+        display: block;
+        text-align: center;
+        grid-template-columns: 90%;
+        margin-left: 0px !important;
+    }
+    p button {
+        max-width: 300px;
+    }
+}
+
+.battlegrounds-image {
+    background: url(https://renattop.github.io/image/home/battlegrounds-image-bg.jpg) no-repeat;
+    background-size: contain !important;
+    padding-bottom: 50%;
+    width: 100%;
+    height: 100%;
+    margin-left: 10%;
+    background-position: 50%;
+}
+
+.heroes:before, .battlegrounds:before, .game-modes:before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: rgba(187, 153, 255, .2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.heroes h2 {
+    padding-top: 60px;
+}
+
+a {
+    text-decoration: none !important;
+    color: white !important;
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+p button {
+    display: block;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3a1064), to(#502ca5));
+    background: linear-gradient(180deg, #3a1064, #502ca5);
+    border-radius: 10px !important;
+    border-color: transparent;
+    width: 90%;
+    padding: 10px;
+    margin-top: 25px !important;
+    margin: 0 auto;
+    color: white;
+}
+
+#disqus_thread {
+    margin-top: 2em;
+}
+
+.head svg {
+    display: block;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    font-size: 90px;
+}
+.bot-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bot-svg svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 15px;
+}
+
+.bot-svg .shape-fill {
+    fill: #08000F;
+}

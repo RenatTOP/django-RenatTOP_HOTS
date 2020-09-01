@@ -1,0 +1,159 @@
+body {
+    background-color: #08000f !important;
+    max-width: 2500px;
+    display: block !important;
+    margin: 0 auto !important;
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+}
+
+div {
+    display: block;
+}
+
+.page-container {
+    display: grid;
+    grid-template-columns: 3000px;
+    margin-right: 0;
+    margin-left: 0;
+    background: #08000f;
+    ;
+}
+
+@media (max-width:2300px) {
+    .page-container {
+        grid-template-columns: 100%;
+    }
+}
+
+a {
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+h1 {
+    padding-top: 3em !important;
+    text-align: center;
+    font-size: calc(1em + 2.5vw) !important;
+    color: white !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: center;
+    color: white !important;
+    text-shadow: 0 0 1rem #009cff;
+    font-size: calc(1em + 2.1vw) !important;
+    text-transform: uppercase;
+}
+
+p {
+    padding-top: 6%;
+    margin-right: 5%;
+    margin-left: 5%;
+    text-align: center;
+    color: #bdd3ff;
+    font-size: calc(1em + 0.5vw) !important;
+}
+
+.heading {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    color: rgb(73, 183, 238);
+    font-size: 1.5rem;
+}
+
+.head {
+    background: url(https://renattop.github.io/image/game/rating_matches/bg.jpg) top center no-repeat;
+    background-size: cover;
+}
+
+.basics {
+    background: url(https://renattop.github.io/image/game/rating_matches/bg2.jpg) top center no-repeat;
+    background-size: cover;
+}
+
+.draft {
+    background: url(https://renattop.github.io/image/game/rating_matches/bg3.jpg) top center no-repeat;
+    background-size: cover;
+    max-height: 600px;
+}
+
+@media (max-width:1159px) {
+    .head {
+        background-size: unset;
+    }
+}
+
+@media (max-width:1159px) {
+    .basics, .draft {
+        background-size: 1500px;
+    }
+}
+
+@media (max-width:925px) {
+    .basics {
+        background: url(https://renattop.github.io/image/game/rating_matches/bg2m.png) top center no-repeat;
+        background-size: 1000px;
+    }
+}
+
+@media (max-width:925px) {
+    .draft {
+        background: url(https://renattop.github.io/image/game/rating_matches/bg3m.jpg) center no-repeat;
+        background-size: cover;
+    }
+}
+
+.basics-header {
+    padding-top: 0%;
+    text-align: center;
+    color: rgb(73, 183, 238);
+}
+
+.basics-heading {
+    margin-top: 15%;
+    text-align: center;
+    color: #bdd3ff;
+}
+
+@media (max-width:1200px) {
+    .basics-heading {
+        margin-top: 20%;
+    }
+}
+
+@media (max-width:925px) {
+    .basics-heading {
+        margin-top: 20em;
+    }
+}
+
+.draft-header {
+    padding-top: 0%;
+    text-align: center;
+    color: rgb(73, 183, 238);
+}
+
+.draft-heading {
+    margin-top: 18em;
+    text-align: center;
+    color: #bdd3ff;
+}
+
+.com {
+    margin-top: 10em;
+}
+
+@media (max-width:700px) {
+    .com {
+        margin-top: 30em;
+    }
+}
+
+@media (max-width:350px) {
+    .com {
+        margin-top: 45em;
+    }
+}

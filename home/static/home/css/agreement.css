@@ -1,0 +1,27 @@
+body {
+    background-color: #08000f !important;
+    max-width: 2000px;
+    display: block !important;
+    margin: 0 auto !important;
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+}
+
+a {
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+h1 {
+    text-align: center;
+    color: white !important;
+    text-shadow: 0 0 1rem #009cff;
+    font-size: calc(1em + 2.5vw) !important;
+    text-transform: uppercase;
+}
+
+p {
+    padding-top: 4%;
+    color: rgb(211, 207, 207);
+    text-shadow: 0 0 1rem #009cff;
+    margin-left: 2%;
+    font-size: calc(1em + 0.3vw) !important;
+}

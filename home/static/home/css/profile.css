@@ -1,0 +1,59 @@
+body {
+    background-color: #08000f !important;
+    max-width: 2500px;
+    margin: 0 auto !important;
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    overflow-x: hidden;
+}
+
+.avatar {
+    display: block;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: calc(1em + 2vw) !important;
+    color: #cce5ff !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-align: center;
+}
+
+h3{
+    font-size: calc(0.9em + 1.2vw) !important;
+    color: #cce5ff !important;
+    text-shadow: 0 0 1rem #009cff;
+    padding-top: 50px;
+    text-align: center;
+}
+
+h4{
+    font-size: calc(0.8em + 1vw) !important;
+    color: #cce5ff !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h5 {
+    font-size: calc(0.7em + 0.8vw) !important;
+    color: #cce5ff !important;
+    text-shadow: 0 0 1rem #009cff;
+    text-align: center;
+}
+
+.raz {
+    margin-top: 100px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.raz div {
+    float: right;
+}
+.raz div:nth-of-type(odd) {
+    float: left;
+}

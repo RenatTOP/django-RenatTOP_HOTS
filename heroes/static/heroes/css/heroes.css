@@ -1,0 +1,389 @@
+body {
+    display: block;
+    background: url(https://renattop.github.io/image/game/bg.jpg) top center no-repeat;
+    background-size: cover;
+    background-color: #000d1a !important;
+    padding: 0;
+    max-width: 2500px;
+    margin: 0 auto !important;
+    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+}
+
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+h1 {
+    text-align: center;
+    color: #cce5ff !important;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+}
+
+.col {
+    text-align: center;
+    color: #cce5ff;
+    padding: 1em;
+}
+
+.rare img:hover {
+    border: #0070FF 3px solid;
+    border-radius: 200px;
+    box-shadow: #0070FF 0 0 25px 10px;
+    transition: all .3s ease;
+}
+
+.epic img:hover {
+    border: #A335EE 3px solid;
+    border-radius: 200px;
+    box-shadow: #A335EE 0 0 25px 10px;
+    transition: all .3s ease;
+}
+
+.leg img:hover {
+    border: #bf642f 3px solid;
+    border-radius: 200px;
+    box-shadow: #bf642f 0 0 25px 10px;
+    transition: all .3s ease;
+}
+
+.col img {
+    width: 140px;
+    height: 140px;
+    border: 2.3px solid #88b8ff;
+    -webkit-box-shadow: 0 0 10px rgba(51,153,255,.5);
+    box-shadow: 0 0 10px rgba(51,153,255,.5);
+    border-radius: 100px;
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+a {
+    color: #cce5ff !important;
+    text-decoration: none !important;
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+a:hover {
+    text-shadow: 0px 1px 1px rgba(229, 234, 255, 1);
+}
+
+button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+button:focus {
+    outline: transparent !important;
+}
+
+form {
+    margin: 100px;
+}
+
+.search {
+    position: relative;
+    line-height: 30px;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #d3d3d3;
+    transition: 0.2s all;
+    cursor: text;
+}
+
+input {
+    border-radius: 10px;
+    width: 100%;
+}
+
+input:invalid {
+    outline: 0;
+    color: #0e0520;
+    border-color: #0e0520;
+}
+
+input:focus, input:valid {
+    border-color: #2704c2;
+}
+
+input:focus~label, input:valid~label {
+    font-size: 16px;
+    top: -30px;
+    color: #1d0d68;
+}
+
+p {
+    color: white;
+}
+
+svg {
+    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+}
+
+.icons {
+    display: grid;
+    grid-template-areas: '. i1 role . i2 universe . i3  rank . search .';
+    text-align: center;
+    color: #cce5ff;
+    margin-top: 50px;
+    padding: 0;
+}
+
+@media(max-width:700px) {
+    .icons {
+        grid-template-areas: '. i1 role . .' '. i2 universe . .' '. i3 rank . .' '. . search . .';
+    }
+}
+
+@media(max-width:491px) {
+    .icons {
+        grid-template-areas: '. i1 .' 'role role role' '. i2 .' 'universe universe universe' '. i3 .' 'rank rank rank' 'search search search';
+    }
+    .i1, .i2, .i3 {
+        padding-bottom: 10px;
+    }
+}
+
+/* Tooltip */
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:before, [data-tooltip]:after {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-tooltip]:before {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px outset black;
+    background: linear-gradient(-60deg, #04043a, #12093d, #210644, #2c0546, #340444);
+    background-size: 300% 300%;
+    -webkit-animation: Gradient 2s ease infinite;
+    -moz-animation: Gradient 2s ease infinite;
+    animation: Gradient 2s ease infinite;
+    color: #cce5ff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+    z-index: 2;
+}
+
+[data-tooltip]:after {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-bottom: 5px solid #000;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+}
+
+[data-tooltip]:hover:before, [data-tooltip]:hover:after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Icons */
+
+svg {
+    cursor: pointer;
+}
+
+.i1 {
+    grid-area: i1;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.role {
+    grid-area: role;
+}
+
+.i2 {
+    grid-area: i2;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.i3 {
+    grid-area: i3;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.universe {
+    grid-area: universe;
+}
+
+.rank {
+    grid-area: rank;
+}
+
+.search {
+    grid-area: search;
+    margin-top: 3px;
+}
+
+/* ___Role___ */
+
+/* Target Tank */
+
+#tank.mixitup-control-active svg * {
+    fill: rgb(255, 215, 0) !important;
+}
+
+/* Target Bruiser */
+
+#bruiser.mixitup-control-active svg * {
+    fill: rgb(255, 140, 0) !important;
+}
+
+/* Target Melee Assassin */
+
+#dd.mixitup-control-active svg * {
+    fill: rgb(220, 20, 60) !important;
+}
+
+/* Target Ranged Assassin */
+
+#rdd.mixitup-control-active svg * {
+    fill: rgb(153, 50, 204) !important;
+}
+
+/* Target Support */
+
+#support.mixitup-control-active svg * {
+    fill: rgb(65, 105, 225) !important;
+}
+
+/* Target Heal */
+
+#heal.mixitup-control-active svg * {
+    fill: rgb(0, 255, 0) !important;
+}
+
+/* ___Universe___ */
+
+/* Target Warcraft */
+
+#war.mixitup-control-active .war1Color {
+    fill: #92611e !important;
+}
+
+#war.mixitup-control-active .war2Color {
+    fill: #dba801 !important;
+}
+
+/* Target StarCraft */
+
+#sc.mixitup-control-active .sc1Color {
+    fill: #8A9597 !important;
+}
+
+#sc.mixitup-control-active .sc2Color {
+    fill: rgb(212, 210, 210) !important;
+}
+
+#sc.mixitup-control-active .sc3Color {
+    fill: rgb(212, 210, 210) !important;
+}
+
+#sc.mixitup-control-active .sc4Color {
+    fill: #7891a7 !important;
+}
+
+#sc.mixitup-control-active .sc5Color {
+    fill: #577889 !important;
+}
+
+#sc.mixitup-control-active .sc6Color {
+    fill: #577889 !important;
+}
+
+#sc.mixitup-control-active .sc7Color {
+    fill: #7891a7 !important;
+}
+
+/* Target Diablo */
+
+#diablo.mixitup-control-active .diablo1Color {
+    fill: #B32428 !important;
+}
+
+#diablo.mixitup-control-active .diablo2Color {
+    fill: #d89953 !important;
+}
+
+/* Target Overwatch */
+
+#over.mixitup-control-active .over1Color {
+    fill: #f99d2a !important;
+}
+
+#over.mixitup-control-active .over2Color {
+    fill: #c4c4c4 !important;
+}
+
+#nexus.mixitup-control-active .nexus1Color {
+    fill: #6250ff !important;
+}
+
+/* Target Nexus */
+
+#nexus.mixitup-control-active .nexus2Color {
+    fill: #be9665 !important;
+}
+
+#nexus.mixitup-control-active .nexus3Color {
+    fill: #be9665 !important;
+}
+
+#nexus.mixitup-control-active .nexus4Color {
+    fill: #be9665 !important;
+}
+
+/*___Rank___*/
+
+/* Target Rare */
+
+#rare.mixitup-control-active svg * {
+    fill: #0070FF;
+}
+
+/* Target Epic */
+
+#epic.mixitup-control-active svg * {
+    fill: #A335EE;
+}
+
+/* Target Legendary */
+
+#legendary.mixitup-control-active svg * {
+    fill: #bf642f;
+}

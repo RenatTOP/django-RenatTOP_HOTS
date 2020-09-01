@@ -1,0 +1,40 @@
+{% extends 'home/base.html' %}
+{% load static i18n %}
+{% block css %}{% static 'home/css/profile.css' %}{% endblock %}
+{% load static i18n %}
+{% block content %}
+    <div><img src="https://renattop.github.io/image/heroes/Imperius/Imperius.png" class="avatar"/></div>
+    <h1>{{user.username}}</h1>
+    <div class="row">
+        <div class="col-6">
+            <h3>{% trans "Favorite heroes" %}</h3>
+            <div class="row">
+                {% for hero in user.favorite_heroes.all %}
+                    <h4>{{ hero }}</h4>
+                {% empty %}
+                    <h4>{% trans "No favorite heroes" %}</h4>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-6">
+            <h3>{% trans "Favorite battlegrounds" %}</h3>
+            <div class="row">
+                {% for bg in user.favorite_bg.all %}
+                    <h4>{{ bg }}</h4>
+                {% empty %}
+                    <h4>{% trans "No favorite battlegrounds" %}</h4>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="raz">
+            <div>
+                <h4>{% trans "Last login" %}:</h4>
+                <h5>{{request.user.last_login}}</h5>
+            </div>
+            <div>
+                <h4>{% trans "Date joined" %}:</h4>
+                <h5>{{request.user.date_joined}}</h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}

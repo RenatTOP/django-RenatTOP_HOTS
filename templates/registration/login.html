@@ -1,0 +1,28 @@
+{% extends "registration/base.html" %}
+{% load i18n static %}
+{% block css %}{% static 'home/css/form.css' %}{% endblock %}
+{% block content %}
+
+{% if form.errors %}
+  <h1>{% blocktrans %}Invalid your username or password. Please try again.{% endblocktrans %}</h1>
+{% endif %}
+
+
+  {% if user.is_authenticated %}
+    <h1>{% trans "You're already logged in." %}</h1>
+  {% else %}
+      <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <h1>{% trans "Login" %}</h1>
+    <div class="input-form">
+        <input type="text" name="username" id="name" required><label for="name">{% trans "Username" %}</label>
+    </div>
+    <div class="input-form">
+        <input type="password" name="password" id="password" required><label for="password">{% trans "Password" %}</label>
+    </div>
+    <button type="submit">{% trans "Log in" %}</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+    <p><a href="{% url 'password_reset' %}">{% trans "Lost password?" %}</a></p>
+  </form>
+  {% endif %}
+{% endblock %}
