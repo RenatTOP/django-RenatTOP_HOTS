@@ -18,7 +18,7 @@ urlpatterns += i18n_patterns(
     path('heroes/', include('heroes.urls')),
     path('rating_matches/', include('rating.urls')),
     path('roles/', include('roles.urls')),
-    path('admin/', admin.site.urls),
+    path('renattop-myadmin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.signup),
 )
