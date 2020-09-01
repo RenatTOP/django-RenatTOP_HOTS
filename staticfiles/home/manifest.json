@@ -1,0 +1,21 @@
+{
+    "name": "Fan site Heroes of the Storm",
+    "short_name": "Fan HOTS",
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "theme_color": "#48069c",
+    "background_color": "#48069c",
+    "description": "Django app fan site Heroes of the Storm, RenatTOP",
+    "icons": [{
+            "src": "https://renattop.github.io/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://renattop.github.io/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
