@@ -20,11 +20,18 @@ def signup(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
-# class RegisterFormView(FormView):
-#     form_class = UserCreationForm
-#     success_url = "/accounts/login/"
-#     template_name = "registration/register.html"
+def page_400(request, exception):
+    return render(request, '400.html')
 
-#     def form_valid(self, form):
-#         form.save()
-#         return super(RegisterFormView, self).form_valid(form)
+
+def page_403(request, exception):
+    return render(request, '403.html')
+
+
+def page_404(request, exception):
+    context = {'exc': exception}
+    return render(request, '404.html', context)
+
+
+def page_500(request):
+    return render(request, '500.html')

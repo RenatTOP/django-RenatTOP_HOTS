@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 from . import views
 from django.utils.translation import gettext_lazy as _
+from django.conf.urls import handler400, handler403, handler404, handler500
 
 
 
@@ -22,3 +23,8 @@ urlpatterns += i18n_patterns(
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.signup),
 )
+
+handler400 = 'renattop.views.page_400'
+handler403 = 'renattop.views.page_403'
+handler404 = 'renattop.views.page_404'
+handler500 = 'renattop.views.page_500'
