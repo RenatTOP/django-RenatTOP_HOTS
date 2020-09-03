@@ -24,7 +24,7 @@ urlpatterns += i18n_patterns(
     path('register/', views.signup),
 )
 
-# handler400 = 'renattop.views.page_400'
-# handler403 = 'renattop.views.page_403'
-# handler404 = 'renattop.views.page_404'
-# handler500 = 'renattop.views.page_500'
+handler400 = 'renattop.views.page_400'
+handler403 = 'renattop.views.page_403'
+handler404 = 'renattop.views.page_404'
+handler500 = 'renattop.views.page_500'

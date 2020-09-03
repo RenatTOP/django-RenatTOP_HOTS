@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 {% load static i18n %}
 {% block css %}{% static 'home/css/profile.css' %}{% endblock %}
-{% load static i18n %}
+{% block title %}{% trans "Profile" %}{% endblock %}
 {% block content %}
     <div><img src="https://renattop.github.io/image/heroes/Imperius/Imperius.png" class="avatar"/></div>
     <h1>{{user.username}}</h1>

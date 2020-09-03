@@ -342,8 +342,8 @@ heroes[67] = `<div class="rdmHeroes col-3" data-aos="flip-left">
     </a>
 </div>`;
 heroes[68] = `<div class="rdmHeroes col-3" data-aos="flip-left">
-    <a href="/heroes/Graymane"><img src="https://renattop.github.io/image/heroes/Greymane/bgm.jpg" alt="" class="rdmImg">
-         <h3 class="rdmheroesh3">Graymane</h3>
+    <a href="/heroes/Greymane"><img src="https://renattop.github.io/image/heroes/Greymane/bgm.jpg" alt="" class="rdmImg">
+         <h3 class="rdmheroesh3">Greymane</h3>
     </a>
 </div>`;
 heroes[69] = `<div class="rdmHeroes col-3" data-aos="flip-left">

@@ -1,0 +1,29 @@
+body {
+    display: block;
+    max-width: 2000px;
+    margin: 0 auto !important;
+    background-color: #08000f !important;
+}
+main {
+    background: url(/image/404/bg.jpg);
+    background-size: cover;
+}
+h1 {
+    text-align: center;
+    color: white !important;
+    font-size: 6rem !important;
+}
+
+p {
+    text-align: center;
+    color: white !important;
+    font-size: 3rem;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px;
+    width: 100%;
+    padding-bottom: 10px;
+}

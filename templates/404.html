@@ -1,1 +1,9 @@
-{{exc}}
+{% extends 'registration/base.html' %}
+{% load static i18n %}
+<link rel="stylesheet" href="{% block css %}{% static 'home/css/errors.css' %}{% endblock %}">
+<title>{% block title %}{% trans "Page not found" %} 404{% endblock %}</title>
+{% block content %}
+        <h1>404</h1>
+        <p>{% trans "Page Not Found" %}</p>
+        <img src="https://renattop.github.io/image/404/gif.gif">
+{% endblock %}

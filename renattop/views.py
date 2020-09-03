@@ -28,10 +28,9 @@ def page_403(request, exception):
     return render(request, '403.html')
 
 
-def page_404(request, exception):
-    context = {'exc': exception}
-    return render(request, '404.html', context)
+def page_404(request, *args, **argv):
+    return render(request, '404.html', status=404)
 
 
 def page_500(request):
-    return render(request, '500.html')
+    return render(request, '500.html', status=500)

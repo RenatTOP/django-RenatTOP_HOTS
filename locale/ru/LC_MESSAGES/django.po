@@ -943,3 +943,9 @@ msgstr "Налёт"
 
 msgid "After 0.5 seconds, Deathwing lunges in a direction dealing 38 damage to enemies and Slowing them by 35&#37; for 2 seconds. Deathwing bites enemies at the end of the lunge, dealing an additional 72 damage."
 msgstr "После паузы в 0.5 сек. Смертокрыл совершает рывок в указанном направлении, нанося противникам 38 ед. урона и замедляя их на 35&#37; на 2 сек. В конце рывка Смертокрыл кусает противников, нанося еще 72 ед. урона."
+
+msgid "Page Not Found"
+msgstr "Страница не найдена"
+
+msgid "Internal Server Error"
+msgstr "Внутренняя ошибка сервера"

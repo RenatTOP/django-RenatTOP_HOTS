@@ -217,7 +217,7 @@ h3 {
     opacity: 1;
 }
 
-li {
+.col li {
     text-transform: uppercase;
 }
 
