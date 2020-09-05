@@ -114,8 +114,8 @@ input:focus~label, input:valid~label, textarea:focus~label {
 .helptext {
     text-align: center;
     padding-top: 15px;
-    color: #cce5ff;
-    text-shadow: 0 0 1rem #009cff;
+    color: #f73838;
+    text-shadow: 0 0 1rem #fc8c8c;
 
 }
 
