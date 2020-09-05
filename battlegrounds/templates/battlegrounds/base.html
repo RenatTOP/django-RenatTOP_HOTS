@@ -63,14 +63,14 @@
             <div class="w-100"></div>
             <div class="fav">
                 <td>
-                    <form method='POST' action="{% url 'home:favourite_bg' request.user.username bg.id %}">
+                    <form method='POST' action="{% url 'home:favourite_bg' bg.id %}">
                         {% csrf_token %}
                         <input type='hidden' name='hero' value={{ hero.id }}>
                         <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
                     </form>
                 </td>
                 <td>
-                    <form method='POST' action="{% url 'home:del_favourite_bg' request.user.username bg.id %}">
+                    <form method='POST' action="{% url 'home:del_favourite_bg' bg.id %}">
                         {% csrf_token %}
                         <input type='hidden' name='hero' value={{ hero.id }}>
                         <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>

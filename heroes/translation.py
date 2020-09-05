@@ -1,5 +1,5 @@
-from modeltranslation.translator import translator, TranslationOptions
 from heroes.models import Hero
+from modeltranslation.translator import translator, TranslationOptions
 
 
 class PageTranslationOptions(TranslationOptions):

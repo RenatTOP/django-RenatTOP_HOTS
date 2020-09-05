@@ -1,6 +1,6 @@
+from heroes.models import Hero
 from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
-from heroes.models import Hero
 
 
 class HeroAdmin(TabbedTranslationAdmin):

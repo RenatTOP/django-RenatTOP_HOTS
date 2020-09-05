@@ -2,8 +2,34 @@
 {% load i18n static %}
 {% block css %}{% static 'home/css/form.css' %}{% endblock %}
 {% block content %}
-    <form>
-        <h2><a href="mailto:renattop.adm@gmail.com">{% trans "Ask questions by email" %}</a></h2>
-        
-    </form>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2>{% trans "Feedback form" %}</a></h2>
+        {{ form.non_field_errors }}
+        <div class="input-form">
+            <input type="text" name="subject" maxlength="100" required="" id="id_subject"><label for="id_subject">{% trans "Topic" %}</label>
+        </div>
+        <span class="helptext">
+            {% for error in form.subject.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </span>
+        <div class="input-form">
+            <input type="email" name="sender" required="" id="id_sender"value="{{request.user.email}}"><label for="id_sender">E-mail</label>
+        </div>
+        <span class="helptext">
+            {% for error in form.sender.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </span>
+        <div class="input-form">
+            <textarea name="message" cols="40" rows="10" required="" id="id_message"></textarea><label for="id_message">{% trans "Message" %}</label>
+        </div>
+        <span class="helptext">
+            {% for error in form.message.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </span>
+        <button type="submit">{% trans "Send" %}</button>
+</form>
 {% endblock %}

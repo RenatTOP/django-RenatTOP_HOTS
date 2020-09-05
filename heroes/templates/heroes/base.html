@@ -47,14 +47,14 @@
         {% include 'heroes/includes/special_btn.html' %}
       {% endif %}
       <td>
-        <form method='POST' action="{% url 'home:favourite_hero' request.user.username hero.id %}">
+        <form method='POST' action="{% url 'home:favourite_hero' hero.id %}">
             {% csrf_token %}
             <input type='hidden' name='hero' value={{ hero.id }}>
               <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
         </form>
       </td>
       <td>
-        <form method='POST' action="{% url 'home:del_favourite_hero' request.user.username hero.id %}">
+        <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}">
             {% csrf_token %}
             <input type='hidden' name='hero' value={{ hero.id }}>
               <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>

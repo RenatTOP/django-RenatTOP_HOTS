@@ -22,8 +22,8 @@
         <div class="row">
             {% for b in bg|dictsort:'title' %}
                 <div class="col">
-                    <a href="{{b.url}}"><img
-                            src="{{ b.preview_url}}" alt="">
+                    <a href="{% url 'battlegrounds:bg' b.url %}"><img
+                            src="{{ b.preview_url}}" alt="{{b.title}}">
                         <h3>{% trans b.title %}</h3>
                         <p>{{ b.description|safe}}</p>
                     </a>

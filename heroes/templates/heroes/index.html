@@ -23,7 +23,7 @@
         <div class="row" id="content">
         {% for h in hero|dictsort:'title' %}
             <div class="col mix {{h.points.u}} {{h.hero_type_en}} {{h.points.q}}">
-                <a href="{{h.title_en}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/{{h.title_en}}.png" alt="">
+                <a href="{% url 'heroes:Heroes' h.title_en %}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/{{h.title_en}}.png" alt="{{hero.title}}">
                     <h3>{{h.title}}</h3>
                 </a>
             </div>

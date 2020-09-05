@@ -1,9 +1,14 @@
-from django.shortcuts import render
-from battlegrounds.models import Battleground
+from django import forms
 from heroes.models import Hero
+from django.conf import settings
+from django.http import HttpResponse
+from django.core.mail import send_mail
 from django.contrib.auth.models import User
+from battlegrounds.models import Battleground
+from django.core.mail.message import BadHeaderError
 from django.views.generic import ListView, DetailView
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -11,14 +16,17 @@ def index(request):
     context = {'hero': hero}
     return render(request, 'home/index.html', context)
 
+
 def agreement(request):
     return render(request, 'home/agreement.html')
+
 
 class Username(DetailView):
     model = User
     template_name = 'home/profile.html'
     slug_field = 'username'
     slug_url_kwarg = 'username'
+
 
 def sitemap(request):
     hero = Hero.objects.filter
@@ -29,38 +37,67 @@ def sitemap(request):
     ranged = hero(hero_type_en="ranged assassin")
     support = hero(hero_type_en="support")
     healer = hero(hero_type_en="healer")
-    context = { 'bg'      :  bg,
-                'tank'    :  tank,
-                'bruiser' :  bruiser,
-                'melee'   :  melee,
-                'ranged'  :  ranged,
-                'support' :  support,
-                'healer'  :  healer}
+    context = {'bg':  bg,
+               'tank':  tank,
+               'bruiser':  bruiser,
+               'melee':  melee,
+               'ranged':  ranged,
+               'support':  support,
+               'healer':  healer}
     return render(request, 'home/sitemap.html', context)
 
-def feedback(request):
-    return render(request, 'home/feedback.html')
 
-def favourite_hero(request, username, fav_id):
+class FeedbackForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    sender = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+
+@login_required
+def feedback(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            sender = form.cleaned_data['sender']
+            message = form.cleaned_data['message'] + "\n From: " + sender
+            recipients = [settings.EMAIL_HOST_USER]
+            try:
+                send_mail(subject, message, sender, recipients)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found')
+        return HttpResponse('Thanks for feedback')
+    else:
+        form = FeedbackForm()
+    return render(request, 'home/feedback.html', {'form': form})
+
+
+@login_required
+def favourite_hero(request, fav_id):
     hero = get_object_or_404(Hero, id=fav_id)
     if request.method == 'POST':
         hero.users.add(request.user)
     return render(request, 'home/profile.html')
 
-def favourite_bg(request, username, fav_id):
+
+@login_required
+def favourite_bg(request, fav_id):
     bg = get_object_or_404(Battleground, id=fav_id)
     if request.method == 'POST':
         bg.users.add(request.user)
     return render(request, 'home/profile.html')
 
 
-def del_favourite_hero(request, username, fav_id):
+@login_required
+def del_favourite_hero(request, fav_id):
     hero = get_object_or_404(Hero, id=fav_id)
     if request.method == 'POST':
         hero.users.remove(request.user)
     return render(request, 'home/profile.html')
 
-def del_favourite_bg(request, username, fav_id):
+
+@login_required
+def del_favourite_bg(request, fav_id):
     bg = get_object_or_404(Battleground, id=fav_id)
     if request.method == 'POST':
         bg.users.remove(request.user)

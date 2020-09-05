@@ -949,3 +949,15 @@ msgstr "Страница не найдена"
 
 msgid "Internal Server Error"
 msgstr "Внутренняя ошибка сервера"
+
+msgid "Feedback form"
+msgstr "Форма обратной связи"
+
+msgid "Topic"
+msgstr "Тема"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Send"
+msgstr "Отправить"
