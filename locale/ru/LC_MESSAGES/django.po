@@ -961,3 +961,21 @@ msgstr "Сообщение"
 
 msgid "Send"
 msgstr "Отправить"
+
+msgid "Role"
+msgstr "Роль"
+
+msgid "Universe"
+msgstr "Вселенная"
+
+msgid "Rank"
+msgstr "Ранг"
+
+msgid "Rare"
+msgstr "Редкий"
+
+msgid "Epic"
+msgstr "Епический"
+
+msgid "Legendary"
+msgstr "Легендарный"

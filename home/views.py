@@ -21,7 +21,7 @@ def agreement(request):
     return render(request, 'home/agreement.html')
 
 
-class Username(DetailView):
+class Profile(DetailView):
     model = User
     template_name = 'home/profile.html'
     slug_field = 'username'

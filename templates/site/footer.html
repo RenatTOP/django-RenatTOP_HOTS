@@ -1,7 +1,13 @@
 {% load i18n %}
 <div class="footermin">
-    <span class="terms">
-        <a href="{% url 'home:agreement' %}">{% trans "User Agreement" %}</a>
+    <span class=
+        {% if LANGUAGE_CODE == 'ru' %}
+            "terms"
+        {% else %}
+            "terms_en"
+        {% endif %}>
+        <a href="{% url 'home:agreement' %}">
+        {% trans "User Agreement" %}</a>
     </span>
     <span class="copyright">Copyright &copy; 2020
         <script>new Date().getFullYear() > 2020 && document.write("- " + new Date().getFullYear());</script>,
@@ -11,14 +17,22 @@
             <img src="https://renattop.github.io/image/logo.png" alt="logo" class="logo">
         </a>
     </div>
-    <span class="map">
-        <a href="
-        {% url 'home:sitemap' %}
-        ">{% trans "Sitemap" %}</a>
+    <span class=
+        {% if LANGUAGE_CODE == 'ru' %}
+            "map"
+        {% else %}
+            "map_en"
+        {% endif %}>
+        <a href="{% url 'home:sitemap' %}">
+        {% trans "Sitemap" %}</a>
     </span>
-    <span class="contacts">
-        <a href="
-        {% url 'home:feedback' %}
-        ">{% trans "Feedback" %}</a>
+    <span class=
+        {% if LANGUAGE_CODE == 'ru' %}
+            "contacts"
+        {% else %}
+            "contacts_en"
+        {% endif %}>
+        <a href="{% url 'home:feedback' %}">
+        {% trans "Feedback" %}</a>
     </span>
 </div>

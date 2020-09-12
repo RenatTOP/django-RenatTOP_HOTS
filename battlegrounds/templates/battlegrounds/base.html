@@ -12,6 +12,8 @@
     <style>
         .container-fluid {
             background: url({{bg.big_pictures_url.b}}) top center no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
         }
     </style>
 </head>
@@ -77,22 +79,15 @@
                     </form>
                 </td>
             </div>
-            <div>
-                <h3>{% trans "Map" %}</h3><img src="{{bg.big_pictures_url.b1}}" alt="" class="image">
-            </div>
-            <div>
-                <img src="{{bg.big_pictures_url.b2}}" alt="" class="image">
-            </div>
-            <div>
-                <img src="{{bg.big_pictures_url.b3}}" alt="" class="image">
-            </div>
             <div class="w-100"></div>
             <div>
+                <h3>{% trans "Map" %}</h3>
+                <img src="{{bg.big_pictures_url.b1}}" alt="" class="image">
+            </div>
+                <img src="{{bg.big_pictures_url.b2}}" alt="" class="image">
+                <img src="{{bg.big_pictures_url.b3}}" alt="" class="image">
                 <img src="{{bg.big_pictures_url.b4}}" alt="" class="image">
-            </div>
-            <div>
                 <img src="{{bg.big_pictures_url.b5}}" alt="" class="image">
-            </div>
         </div>
         {% endwith %}
             {% include 'site/disqus.html' %}

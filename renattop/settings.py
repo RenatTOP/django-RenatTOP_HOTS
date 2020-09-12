@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-DEBUG =  os.environ['DEBUG']
+DEBUG = os.environ['DEBUG']
 
 ALLOWED_HOSTS = ['*']
 
@@ -77,13 +77,13 @@ WSGI_APPLICATION = 'renattop.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'my',
-            'USER': os.environ['USER'],
-            'PASSWORD': os.environ['PASSWORD'],
-            'HOST': os.environ['HOST'],
-            'PORT': '25060',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbpostgres',
+        'USER': os.environ['USER'],
+        'PASSWORD': os.environ['PASSWORD'],
+        'HOST': os.environ['HOST'],
+        'PORT': '5432',
     }
 }
 
@@ -118,7 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-gettext = lambda s: s
+
+def gettext(s): return s
+
 
 LANGUAGES = (
     ('en', gettext('English')),

@@ -6,103 +6,103 @@
 {% block content %}
     <div id="cont">
         <ul class="level-0">
-                <li class="lhead">{% trans "Home" %}<span class="lcount">1 {% trans "page" %}</span></li>
-                <li class="lpage last-page"><a href="home"
-                                title="Home">{% trans "Home" %}</a></li>
-                <li>
-                    <ul class="level-1">
-                        <li class="lhead">{% trans "Game" %}<span class="lcount">5 {% trans "pages" %}</span></li>
-                        <li class="lpage"><a href="{% url 'roles:index' %}"
-                                        title="Hero Role">{% trans "Roles" %}</a></li>
-                        <li class="lpage"><a
-                                        href="{% url 'game_modes:index' %}"
-                                        title="Modes">{% trans "Modes" %}</a></li>
-                        <li class="lpage"><a href="{% url 'brawl:index' %}"
-                                        title="Brawl">{% trans "Hero brawl" %}</a>
-                        </li>
-                        <li class="lpage"><a
-                                        href="{% url 'battlegrounds:index' %}"
-                                        title="Battlegrounds">{% trans "Battlegrounds" %}</a></li>
-                        <li class="lpage last-page"><a
-                                        href="{% url 'rating_matches:index' %}"
-                                        title="Ranked: Storm League">{% trans "Ranked: Storm League" %}</a>
-                        </li>
-                        <li>
-                            <ul class="level-1">
-                                <li class="lhead">{% trans "Battlegrounds" %}<span class="lcount">15
-                                                {% trans "pages" %}</span></li>
-                                {% for b in bg|dictsort:'title' %}
-                                <li class="lpage"><a
-                                                href="/battlegrounds/{{b.url}}/"
-                                                title="{{b.title}}">{{b.title}}</a>
-                                </li>
-                                {% endfor %}
+            <li class="lhead">{% trans "Home" %}<span class="lcount">1 {% trans "page" %}</span></li>
+            <li class="lpage last-page"><a href="home"
+                            title="Home">{% trans "Home" %}</a></li>
+            <li>
+                <ul class="level-1">
+                    <li class="lhead">{% trans "Game" %}<span class="lcount">5 {% trans "pages" %}</span></li>
+                    <li class="lpage"><a href="{% url 'roles:index' %}"
+                                    title="Hero Role">{% trans "Roles" %}</a></li>
+                    <li class="lpage"><a
+                                    href="{% url 'game_modes:index' %}"
+                                    title="Modes">{% trans "Modes" %}</a></li>
+                    <li class="lpage"><a href="{% url 'brawl:index' %}"
+                                    title="Brawl">{% trans "Hero brawl" %}</a>
+                    </li>
+                    <li class="lpage"><a
+                                    href="{% url 'battlegrounds:index' %}"
+                                    title="Battlegrounds">{% trans "Battlegrounds" %}</a></li>
+                    <li class="lpage last-page"><a
+                                    href="{% url 'rating_matches:index' %}"
+                                    title="Ranked: Storm League">{% trans "Ranked: Storm League" %}</a>
+                    </li>
+                    <li>
+                        <ul class="level-1">
+                            <li class="lhead">{% trans "Battlegrounds" %}<span class="lcount">15
+                                            {% trans "pages" %}</span></li>
+                            {% for b in bg|dictsort:'title' %}
+                            <li class="lpage"><a
+                                            href="/battlegrounds/{{b.url}}/"
+                                            title="{{b.title}}">{{b.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="level-1">
+                    <li class="lhead">{% trans "Heroes" %}<span class="lcount">1 {% trans "page" %}</span></li>
+                    <li class="lpage last-page"><a
+                                    href="{% url 'heroes:index' %}"
+                                    title="Heroes">{% trans "Heroes" %}</a></li>
+                    <li>
+                            <ul class="level-2">
+                                    <li class="lhead">{% trans "Tank" %}<span class="lcount">11
+                                                    {% trans "pages" %}</span></li>
+                                    {% for t in tank|dictsort:'title' %}
+                                    <li class="lpage"><a
+                                                    href="/heroes/{{t.title_en}}"
+                                                    title="{{t.title}}">{{t.title}}</a></li>
+                                    {% endfor %}
                             </ul>
-                        </li>
-                    </ul>
-                    <ul class="level-1">
-                        <li class="lhead">{% trans "Heroes" %}<span class="lcount">1 {% trans "page" %}</span></li>
-                        <li class="lpage last-page"><a
-                                        href="{% url 'heroes:index' %}"
-                                        title="Heroes">{% trans "Heroes" %}</a></li>
-                        <li>
-                                <ul class="level-2">
-                                        <li class="lhead">{% trans "Tank" %}<span class="lcount">11
-                                                        {% trans "pages" %}</span></li>
-                                        {% for t in tank|dictsort:'title' %}
-                                        <li class="lpage"><a
-                                                        href="/heroes/{{t.title_en}}"
-                                                        title="{{t.title}}">{{t.title}}</a></li>
-                                        {% endfor %}
-                                </ul>
-                                <ul class="level-2">
-                                        <li class="lhead">{% trans "Bruiser" %}<span class="lcount">15
-                                                        {% trans "pages" %}</span></li>
-                                        {% for br in bruiser|dictsort:'title' %}
-                                        <li class="lpage"><a
-                                                        href="/heroes/{{br.title_en}}"
-                                                        title="{{br.title}}">{{br.title}}</a></li>
-                                        {% endfor %}
-                                </ul>
-                                <ul class="level-2">
-                                        <li class="lhead">{% trans "Melee Assassin" %}<span class="lcount">11
-                                                        {% trans "pages" %}</span></li>
-                                        {% for m in melee|dictsort:'title' %}
-                                        <li class="lpage"><a
-                                                        href="/heroes/{{m.title_en}}"
-                                                        title="{{m.title}}">{{m.title}}</a></li>
-                                        {% endfor %}
-                                </ul>
-                                <ul class="level-2">
-                                        <li class="lhead">{% trans "Ranged Assassin" %}<span class="lcount">29
-                                                        {% trans "pages" %}</span></li>
-                                        {% for r in ranged|dictsort:'title' %}
-                                        <li class="lpage"><a
-                                                        href="/heroes/{{r.title_en}}"
-                                                        title="{{r.title}}">{{r.title}}</a></li>
-                                        {% endfor %}
-                                </ul>
-                                <ul class="level-2">
-                                        <li class="lhead">{% trans "Support" %}<span class="lcount">4
-                                                        {% trans "pages" %}</span></li>
-                                        {% for s in support|dictsort:'title' %}
-                                        <li class="lpage"><a
-                                                        href="/heroes/{{s.title_en}}"
-                                                        title="{{s.title}}">{{s.title}}</a></li>
-                                        {% endfor %}
-                                </ul>
-                                <ul class="level-2">
-                                        <li class="lhead">{% trans "Healer" %}<span class="lcount">16
-                                                        {% trans "pages" %}</span></li>
-                                        {% for h in healer|dictsort:'title' %}
-                                        <li class="lpage"><a
-                                                        href="/heroes/{{h.title_en}}"
-                                                        title="{{h.title}}">{{h.title}}</a></li>
-                                        {% endfor %}
-                                </ul>
-                        </li>
-                    </ul>
-                </li>
+                            <ul class="level-2">
+                                    <li class="lhead">{% trans "Bruiser" %}<span class="lcount">15
+                                                    {% trans "pages" %}</span></li>
+                                    {% for br in bruiser|dictsort:'title' %}
+                                    <li class="lpage"><a
+                                                    href="/heroes/{{br.title_en}}"
+                                                    title="{{br.title}}">{{br.title}}</a></li>
+                                    {% endfor %}
+                            </ul>
+                            <ul class="level-2">
+                                    <li class="lhead">{% trans "Melee Assassin" %}<span class="lcount">11
+                                                    {% trans "pages" %}</span></li>
+                                    {% for m in melee|dictsort:'title' %}
+                                    <li class="lpage"><a
+                                                    href="/heroes/{{m.title_en}}"
+                                                    title="{{m.title}}">{{m.title}}</a></li>
+                                    {% endfor %}
+                            </ul>
+                            <ul class="level-2">
+                                    <li class="lhead">{% trans "Ranged Assassin" %}<span class="lcount">29
+                                                    {% trans "pages" %}</span></li>
+                                    {% for r in ranged|dictsort:'title' %}
+                                    <li class="lpage"><a
+                                                    href="/heroes/{{r.title_en}}"
+                                                    title="{{r.title}}">{{r.title}}</a></li>
+                                    {% endfor %}
+                            </ul>
+                            <ul class="level-2">
+                                    <li class="lhead">{% trans "Support" %}<span class="lcount">4
+                                                    {% trans "pages" %}</span></li>
+                                    {% for s in support|dictsort:'title' %}
+                                    <li class="lpage"><a
+                                                    href="/heroes/{{s.title_en}}"
+                                                    title="{{s.title}}">{{s.title}}</a></li>
+                                    {% endfor %}
+                            </ul>
+                            <ul class="level-2">
+                                    <li class="lhead">{% trans "Healer" %}<span class="lcount">16
+                                                    {% trans "pages" %}</span></li>
+                                    {% for h in healer|dictsort:'title' %}
+                                    <li class="lpage"><a
+                                                    href="/heroes/{{h.title_en}}"
+                                                    title="{{h.title}}">{{h.title}}</a></li>
+                                    {% endfor %}
+                            </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 {% endblock %}
