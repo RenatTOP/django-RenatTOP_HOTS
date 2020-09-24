@@ -979,3 +979,15 @@ msgstr "Епический"
 
 msgid "Legendary"
 msgstr "Легендарный"
+
+msgid "Energy"
+msgstr "Енергия"
+
+msgid "Brew"
+msgstr "Отвар"
+
+msgid "Charge"
+msgstr "Заряд"
+
+msgid "Ammo"
+msgstr "Патроны"

@@ -9,6 +9,9 @@
         <meta name="description" content="{{h.title}} HOTS">
         <link rel="stylesheet" href="{% static 'heroes/css/allheroes.css' %}">
         <link rel="stylesheet" href="{% static 'home/css/aos.css' %}">
+        <style>
+            {% include 'heroes/includes/spec_mana_heroes_css.html' %}
+        </style>
         <title>{{h.title}}</title>
     </head>
 
@@ -18,12 +21,16 @@
         {% include 'site/navbar.html' %}
         </header>
         <main class="container-fluid">
+        {% if h.title_en == 'Cho' or h.title_en == 'Gall' %}
+            {% include 'heroes/includes/ChoGall/index.html' %}
+        {% else %}
             <div class="row">
                 <div class="col-12">
                     <h1>{{h.title}}</h1>
                     <h3>{{h.title_min}}</h3>
                     <em>{{h.description}}</em>
                 </div>
+                
                 {% if h.title_en == 'Valeera' %}
                     {% include 'heroes/includes/valeera/bg.html' %}
                 {% elif h.title_en == 'Greymane' %}
@@ -35,6 +42,7 @@
                     </video>
                 </div>
                 {% endif %}
+
                 {% if h.title_en == 'Valeera' %}
                     {% include 'heroes/includes/valeera/bgm.html' %}
                 {% elif h.title_en == 'Greymane' %}
@@ -44,9 +52,11 @@
                     <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/bgm.jpg" alt="" class="headerm">
                 </div>
                 {% endif %}
+
                 {% if h.title_en == 'Deathwing' or h.title_en == 'Valeera' or h.title_en == 'Greymane' or h.title_en == 'Cho' or h.title_en == 'Gall' %}
                     {% include 'heroes/includes/special_btn.html' %}
                 {% endif %}
+
                 <td>
                     <form method='POST' action="{% url 'home:favourite_hero' hero.id %}">
                             {% csrf_token %}
@@ -151,14 +161,7 @@
                         <li>
                             <input type="range" id="lvl" oninput="Lvl()" min="0" max="30" step="1" value="0">
                         </li>
-                        <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-                        <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
-                        <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
-                        <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-                        <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-                        <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-                        <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-                        <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
+                        {% include 'heroes/includes/spec_mana_heroes.html' %}
                     </ul>
                 </div>
                 <div class="w-100"></div>
@@ -246,6 +249,7 @@
                     </ul>
                 </div>
             </div>
+        {% endif %}
             <div>
                 <h2>{% trans "Other heroes" %}</h2>
                 <div class="randomHeroes"></div>
