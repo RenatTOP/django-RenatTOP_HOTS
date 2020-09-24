@@ -281,3 +281,7 @@ p button {
 .bot-svg .shape-fill {
     fill: #08000F;
 }
+
+.ua-wa-wb.ua-wa-wb-pulse {
+    display: none !important;
+}

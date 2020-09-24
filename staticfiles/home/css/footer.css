@@ -99,7 +99,7 @@ footer {
     .contacts {
         top: 100%;
         left: 50%;
-        margin-left: -60px;
+        margin-left: -55px;
     }
 }
 
@@ -115,4 +115,57 @@ footer {
 
 .mobail {
     display: none;
+}
+
+/*English*/
+
+.map_en a, .terms_en a {
+    text-shadow: none !important;
+    text-transform: none !important;
+}
+
+.contacts_en {
+    position: absolute;
+    top: 90%;
+    left: 92%;
+    color: white;
+}
+
+.terms_en {
+    position: absolute;
+    top: 50%;
+    padding-left: 3%;
+}
+
+.map_en {
+    position: absolute;
+    top: 50%;
+    left: 92%;
+}
+
+@media(max-width:1280px) {
+    .contacts_en {
+        left: 70%;
+    }
+    .map_en {
+        left: 70%;
+    }
+}
+
+@media (max-width:630px) {
+    .terms_en {
+        top: 160%;
+        left: 50%;
+        margin-left: -65px;
+    }
+    .map_en {
+        top: 130%;
+        left: 50%;
+        margin-left: -28px;
+    }
+    .contacts_en {
+        top: 100%;
+        left: 50%;
+        margin-left: -31px;
+    }
 }
