@@ -1,7 +1,6 @@
 @font-face {
     font-family: MinionPro-SemiboldIt;
-    src: url(../font/MinionPro-SemiboldIt.otf)  format("truetype"),
-    local('MinionPro-SemiboldIt');
+    src: url(../font/MinionPro-SemiboldIt.otf) format("truetype"), local('MinionPro-SemiboldIt');
 }
 
 * {
