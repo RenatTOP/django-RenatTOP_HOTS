@@ -1,5 +1,6 @@
 {% load i18n %}
-<div>
+<div class="col-12 switch-container">
+    <div>
     <a class="source source-2 target target-1 switch" {% if h.title_en == 'Gall'%}href="Gall/"{% endif %}>
     {% if h.title_en == 'Deathwing' %}
         {% trans "Destroyer" %}
@@ -11,8 +12,8 @@
         {% trans "Gall" %}
     {% endif %}
     </a>
-</div>
-<div>
+    </div>
+    <div>
     <a class="source source-1 target target-2 switch" {% if h.title_en == 'Cho'%}href="Cho/"{% endif %}>
     {% if h.title_en == 'Deathwing' %}
         {% trans "World Breaker" %}
@@ -23,4 +24,5 @@
     {% elif h.title_en == 'Gall'%}
         {% trans "Cho" %}
     {% endif %}</a>
+    </div>
 </div>

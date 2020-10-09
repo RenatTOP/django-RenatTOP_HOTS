@@ -116,7 +116,6 @@ input:focus~label, input:valid~label, textarea:focus~label {
     padding-top: 15px;
     color: #f73838;
     text-shadow: 0 0 1rem #fc8c8c;
-
 }
 
 button {

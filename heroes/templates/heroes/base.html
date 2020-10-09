@@ -56,21 +56,22 @@
                 {% if h.title_en == 'Deathwing' or h.title_en == 'Valeera' or h.title_en == 'Greymane' or h.title_en == 'Cho' or h.title_en == 'Gall' %}
                     {% include 'heroes/includes/special_btn.html' %}
                 {% endif %}
-
-                <td>
-                    <form method='POST' action="{% url 'home:favourite_hero' hero.id %}">
+                <div class="fav_buttons">
+                    <td>
+                        <form method='POST' action="{% url 'home:favourite_hero' hero.id %}">
+                                {% csrf_token %}
+                                <input type='hidden' name='hero' value={{ hero.id }}>
+                                <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}">
                             {% csrf_token %}
                             <input type='hidden' name='hero' value={{ hero.id }}>
-                            <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
-                    </form>
-                </td>
-                <td>
-                    <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}">
-                        {% csrf_token %}
-                        <input type='hidden' name='hero' value={{ hero.id }}>
-                        <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
-                    </form>
-                </td>
+                            <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
+                        </form>
+                    </td>
+                </div>
                 <div class="w-100"></div>
                 <div class="col" data-aos="fade-left">
                     <ul>
