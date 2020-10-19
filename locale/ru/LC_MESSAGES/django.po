@@ -944,6 +944,14 @@ msgstr "Налёт"
 msgid "After 0.5 seconds, Deathwing lunges in a direction dealing 38 damage to enemies and Slowing them by 35&#37; for 2 seconds. Deathwing bites enemies at the end of the lunge, dealing an additional 72 damage."
 msgstr "После паузы в 0.5 сек. Смертокрыл совершает рывок в указанном направлении, нанося противникам 38 ед. урона и замедляя их на 35&#37; на 2 сек. В конце рывка Смертокрыл кусает противников, нанося еще 72 ед. урона."
 
+#Varian
+msgid "Twin Blades of Fury"
+msgstr "Хватка титана"
+
+msgid "Basic Attacks reduce Heroic Strike's cooldown by 9 seconds, and increase Varian's Movement Speed by 30&#37; for 2 seconds. Passive: Attack Speed increased by 100&#37;. Passive: Base Attack Damage reduced by 25&#37;."
+msgstr "Автоатаки сокращают время восстановления «Удара героя» на 9 сек. и повышают скорость передвижения на 30&#37; на 2 сек. Пассивный эффект: повышает cкорость атаки на 100&#37;. Пассивный эффект: уменьшает урон от автоатак на 25&#37;."
+
+#Other
 msgid "Page Not Found"
 msgstr "Страница не найдена"
 

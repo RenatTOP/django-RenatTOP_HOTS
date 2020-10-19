@@ -143,9 +143,16 @@
                         {% endif %}
                         <li class="ab" id="heroic">{% trans "Heroic Abilities" %}</li>
                         <li>
-                        {% for abh in "12" %}
-                        <a href="#h{{abh}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="" class="heroic"></a>
-                        {% endfor %}
+                            {% if h.title_en == 'Varian' %}
+                                {% for abh in "12" %}
+                                <a href="#h{{abh}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="" class="heroic"></a>
+                                {% endfor %}
+                                <a href="#h3"><img src="https://renattop.github.io/image/heroes/Varian/h3.png" alt="" class="heroic"></a>
+                            {% else %}
+                                {% for abh in "12" %}
+                                <a href="#h{{abh}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="" class="heroic"></a>
+                                {% endfor %}
+                            {% endif %}
                         </li>
                         <li class="ab" id="trait">{% trans "Trait" %}</li>
                         <li>
@@ -174,81 +181,126 @@
                     {% include 'heroes/includes/greymane/ability.html' %}
                 {% elif h.title_en == 'Abathur' %}
                     {% for i in "12" %}
-                <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down'%}">
-                    <ul>
-                        <li>
-                            <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
-                        </li>
-                        <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
-                        </li>
-                        <li>
-                            <h3>{% cycle h.ability1 h.ability2%}</h3><em>{% cycle h.ab_desc1 h.ab_desc2%}</em>
-                        </li>
-                    </ul>
-                </div>
-                {% endfor %}
+                        <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down'%}">
+                            <ul>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
+                                </li>
+                                <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.ability1 h.ability2%}</h3><em>{% cycle h.ab_desc1 h.ab_desc2%}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
                 <div class="col zero"></div>
                 {% else %}
                     {% for i in "123" %}
-                    <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down' 'right' %}">
-                        <ul>
-                            <li>
-                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
-                            </li>
-                            <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
-                            </li>
-                            <li>
-                                <h3>{% cycle h.ability1 h.ability2 h.ability3 %}</h3><em>{% cycle h.ab_desc1 h.ab_desc2 h.ab_desc3 %}</em>
-                            </li>
-                        </ul>
-                    </div>
+                        <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
+                                </li>
+                                <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.ability1 h.ability2 h.ability3 %}</h3><em>{% cycle h.ab_desc1 h.ab_desc2 h.ab_desc3 %}</em>
+                                </li>
+                            </ul>
+                        </div>
                     {% endfor %}
                 {% endif %}
                 <div class="w-100"></div>
                 {% if h.title_en == 'Deathwing' or h.title_en == 'Tracer' %}
-                {% for i in '1' %}
-                <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                    {% for i in '1' %}
+                        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                </li>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                                </li>
+                                <li>
+                                    <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    <div class="col zero"></div>
+                {% elif h.title_en == 'Varian' %}
+                    {% for i in '12' %}
+                        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                </li>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                                </li>
+                                <li>
+                                    <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
+                                </li>
+                            </ul>
+                        </div>
+                {% endfor %}
+                <div class="col" id="h3" data-aos="fade-right">
                     <ul>
                         <li>
-                            <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                            <img src="https://renattop.github.io/image/heroes/Varian/img-h3.jpg" alt="" class="img-ab">
                         </li>
                         <li>
-                            <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                            <img src="https://renattop.github.io/image/heroes/Varian/h3.png" alt="" class="mab">
                         </li>
                         <li>
-                            <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
+                            {% include 'heroes/includes/varian/heroic.html' %}
                         </li>
                     </ul>
                 </div>
-                {% endfor %}
-                <div class="col zero"></div>
+                <div class="w-100"></div>
                 {% else %}
                     {% for i in '12' %}
-                    <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                </li>
+                                <li>
+                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% if h.title_en == 'Varian' %}
+                    <div class="col zero"></div>
+                    <div class="col" id="ab" data-aos="fade-up">
                         <ul>
                             <li>
-                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
                             </li>
                             <li>
-                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
-                            </li>
-                            <li>
-                                <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
+                                <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
                             </li>
                         </ul>
                     </div>
-                    {% endfor %}
+                    <div class="col zero"></div>
+                {% else %}
+                    <div class="col" id="ab" data-aos="fade-{{aos3}}">
+                        <ul>
+                            <li>
+                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
+                            </li>
+                            <li>
+                                <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
+                            </li>
+                        </ul>
+                    </div>
                 {% endif %}
-                <div class="col" id="ab" data-aos="fade-{{aos3}}">
-                    <ul>
-                        <li>
-                            <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
-                        </li>
-                        <li>
-                            <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
-                        </li>
-                    </ul>
-                </div>
             </div>
         {% endif %}
             <div>
