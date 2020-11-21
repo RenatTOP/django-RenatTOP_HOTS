@@ -1,74 +1,36 @@
 {% load i18n %}
+<li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
+<li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
 {% if h.title_en == 'Deathwing' %}
-    <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-    <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
     <li class="stats">{% trans "Energy" %}: 100</li>
     <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats">{% trans "Regen" %}: 5</li>
-    <li class="stats" id="regen-m"><span id="rg-m-p"></span></li>
-    <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-    <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-    <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-    <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
 {% elif h.title_en == 'Valeera' %}
-    <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-    <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
     <li class="stats">{% trans "Energy" %}: 100</li>
     <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats">{% trans "Regen" %}: 9.9</li>
-    <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-    <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-    <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-    <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-    <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
 {% elif h.title_en == 'Chen' %}
-    <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-    <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
-    <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats">{% trans "Brew" %}: 100</li>
+    <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-    <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-    <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-    <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-    <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
 {% elif h.title_en == 'D.Va' %}
-    <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-    <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
     <li class="stats">{% trans "Charge" %}: 100</li>
     <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-    <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-    <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-    <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-    <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
-{% elif  h.title_en == 'Lt.Morales' or 'Zarya' %}
-    <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-    <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
+{% elif  h.title_en == 'Lt.Morales' or h.title_en == 'Zarya' %}
     <li class="stats">{% trans "Energy" %}: 100</li>
     <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-    <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-    <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-    <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-    <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
 {% elif h.title_en == 'Tracer' %}
-    <li class="stats" id="health"></li>
-    <li class="stats" id="regen-hp"></li>
+    <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats">{% trans "Ammo" %}: 10</li>
-    <li class="stats" id="mana"></li>
-    <li class="stats" id="regen-m"></li>
-    <li class="stats" id="dpa"></li>
-    <li class="stats" id="speed-dmg"></li>
-    <li class="stats" id="dps"></li>
-    <li class="stats" id="range"></li>
+    <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
 {% else %}
-    <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-    <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
     <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
     <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-    <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-    <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-    <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-    <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
 {% endif %}
+<li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
+<li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
+<li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
+<li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
 

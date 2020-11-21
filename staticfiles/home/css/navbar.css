@@ -62,9 +62,8 @@
     border-color: #210644;
 }
 
-@media(max-width:1140px) {
+@media(max-width:1148px) {
     .auth-btn {
-        width: 80%;
         height: 100% !important;
     }
 }

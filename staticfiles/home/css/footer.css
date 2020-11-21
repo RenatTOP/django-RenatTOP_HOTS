@@ -47,7 +47,7 @@ footer {
 .copyright {
     position: absolute;
     text-align: left;
-    padding-left: 3%;
+    padding-left: 4%;
     top: 90%;
     color: white;
 }
@@ -55,51 +55,46 @@ footer {
 .contacts {
     position: absolute;
     top: 90%;
-    left: 89%;
+    left: 92%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
     color: white;
 }
 
 .terms {
     position: absolute;
     top: 50%;
-    padding-left: 3%;
+    padding-left: 4%;
 }
 
 .map {
     position: absolute;
     top: 50%;
-    left: 89%;
-}
-
-@media(max-width:800px) {
-    .contacts {
-        left: 70%;
-    }
-    .map {
-        left: 70%;
-    }
+    left: 92%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
 }
 
 @media(max-width:630px) {
     .terms {
         top: 160%;
         left: 50%;
-        margin-left: -120px;
+        transform: translate(-50%, -50%);
     }
     .copyright {
         top: 200%;
         left: 50%;
-        margin-left: -203px;
+        transform: translate(-50%, -50%);
     }
     .map {
         top: 130%;
         left: 50%;
-        margin-left: -49px;
+        transform: translate(-50%, -50%);
     }
     .contacts {
         top: 100%;
         left: 50%;
-        margin-left: -55px;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -107,65 +102,9 @@ footer {
     .mobail {
         display: block;
     }
-    .copyright {
-        text-align: center;
-        margin-left: -155px;
-    }
+
 }
 
 .mobail {
     display: none;
-}
-
-/*English*/
-
-.map_en a, .terms_en a {
-    text-shadow: none !important;
-    text-transform: none !important;
-}
-
-.contacts_en {
-    position: absolute;
-    top: 90%;
-    left: 92%;
-    color: white;
-}
-
-.terms_en {
-    position: absolute;
-    top: 50%;
-    padding-left: 3%;
-}
-
-.map_en {
-    position: absolute;
-    top: 50%;
-    left: 92%;
-}
-
-@media(max-width:1280px) {
-    .contacts_en {
-        left: 70%;
-    }
-    .map_en {
-        left: 70%;
-    }
-}
-
-@media (max-width:630px) {
-    .terms_en {
-        top: 160%;
-        left: 50%;
-        margin-left: -65px;
-    }
-    .map_en {
-        top: 130%;
-        left: 50%;
-        margin-left: -28px;
-    }
-    .contacts_en {
-        top: 100%;
-        left: 50%;
-        margin-left: -31px;
-    }
 }

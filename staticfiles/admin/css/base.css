@@ -4,28 +4,41 @@
 
 @import url(fonts.css);
 
-html, body {
-    height: 100%;
+* {
+    font-family: MinionPro-SemiboldIt !important;
 }
+
+/* html, body {
+    height: 100%;
+} */
 
 body {
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
-    color: #333;
-    background: #fff;
+    background: linear-gradient(45deg, #08000f, #0e001a, #18022b);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 8s ease infinite;
+    -moz-animation: Gradient 8s ease infinite;
+    animation: Gradient 8s ease infinite;
 }
 
 /* LINKS */
 
+a {
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
+}
+
 a:link, a:visited {
-    color: #447e9b;
+    color: #cce5ff;
     text-decoration: none;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 a:focus, a:hover {
-    color: #036;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 a:focus {
@@ -37,7 +50,7 @@ a img {
 }
 
 a.section:link, a.section:visited {
-    color: #fff;
+    color:#cce5ff;
     text-decoration: none;
 }
 
@@ -47,8 +60,24 @@ a.section:focus, a.section:hover {
 
 /* GLOBAL DEFAULTS */
 
+span {
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
+}
+
+label {
+    color: #cce5ff !important;
+    text-shadow: 0 0 1rem #009cff;
+}
+
 p, ol, ul, dl {
     margin: .2em 0 .8em 0;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
+}
+
+div#id_password {
+    color: #cce5ff;
 }
 
 p {
@@ -58,17 +87,20 @@ p {
 
 h1,h2,h3,h4,h5 {
     font-weight: bold;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 h1 {
     margin: 0 0 20px;
     font-weight: 300;
-    font-size: 20px;
-    color: #666;
+    font-size: 25px;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 20px;
     margin: 1em 0 .5em 0;
 }
 
@@ -78,20 +110,19 @@ h2.subhead {
 }
 
 h3 {
-    font-size: 14px;
+    font-size: 18px;
     margin: .8em 0 .3em 0;
-    color: #666;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 12px;
+    font-size: 16px;
     margin: 1em 0 .8em 0;
     padding-bottom: 3px;
 }
 
 h5 {
-    font-size: 10px;
+    font-size: 14px;
     margin: 1.5em 0 .5em 0;
     color: #666;
     text-transform: uppercase;
@@ -108,7 +139,7 @@ li ul {
 }
 
 li, dt, dd {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -135,7 +166,7 @@ fieldset {
 }
 
 blockquote {
-    font-size: 11px;
+    font-size: 15px;
     color: #777;
     margin-left: 2px;
     padding-left: 10px;
@@ -143,9 +174,8 @@ blockquote {
 }
 
 code, pre {
-    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
     color: #666;
-    font-size: 12px;
+    font-size: 15px;
     overflow-x: auto;
 }
 
@@ -174,16 +204,17 @@ hr {
 /* TEXT STYLES & MODIFIERS */
 
 .small {
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .mini {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .help, p.help, form p.help, div.help, form div.help, div.help li {
     font-size: 11px;
-    color: #999;
+    color: #cce5ff;
+    text-shadow: none !important;
 }
 
 div.help ul {
@@ -199,7 +230,6 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
 }
 
 .quiet, a.quiet:link, a.quiet:visited {
-    color: #999;
     font-weight: normal;
 }
 
@@ -219,12 +249,13 @@ table {
 }
 
 td, th {
-    font-size: 13px;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
+    font-size: 17px;
     line-height: 16px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid transparent;
     vertical-align: top;
     padding: 8px;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 }
 
 th {
@@ -236,7 +267,7 @@ thead th,
 tfoot td {
     color: #666;
     padding: 5px 10px;
-    font-size: 11px;
+    font-size: 15px;
     background: #fff;
     border: none;
     border-top: 1px solid #eee;
@@ -257,14 +288,14 @@ tr.alt {
 }
 
 tr:nth-child(odd), .row-form-errors {
-    background: #fff;
+    background: transparent;
 }
 
 tr:nth-child(even),
 tr:nth-child(even) .errorlist,
 tr:nth-child(odd) + .row-form-errors,
 tr:nth-child(odd) + .row-form-errors .errorlist {
-    background: #f9f9f9;
+    background: transparent;
 }
 
 /* SORTABLE TABLES */
@@ -273,15 +304,15 @@ thead th {
     padding: 5px 10px;
     line-height: normal;
     text-transform: uppercase;
-    background: #f6f6f6;
+    background: transparent;
 }
 
-thead th a:link, thead th a:visited {
+/* thead th a:link, thead th a:visited {
     color: #666;
-}
+} */
 
 thead th.sorted {
-    background: #eee;
+    background: transparent;
 }
 
 thead th.sorted .text {
@@ -300,7 +331,7 @@ table thead th .text a {
 }
 
 table thead th .text a:focus, table thead th .text a:hover {
-    background: #eee;
+    background:  #08000f;
 }
 
 thead th.sorted a.sortremove {
@@ -346,7 +377,7 @@ table thead th.sorted .sortoptions a.sortremove:after {
     top: -6px;
     left: 3px;
     font-weight: 200;
-    font-size: 18px;
+    font-size: 22px;
     color: #999;
 }
 
@@ -385,9 +416,8 @@ input, textarea, select, .form-row p, form .button {
     margin: 2px 0;
     padding: 2px 3px;
     vertical-align: middle;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 17px;
 }
 .form-row div.help {
     padding: 2px 3px;
@@ -397,12 +427,19 @@ textarea {
     vertical-align: top;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px #08000f;
+    -webkit-text-fill-color: #cce5ff;
+}
+
 input[type=text], input[type=password], input[type=email], input[type=url],
 input[type=number], input[type=tel], textarea, select, .vTextField {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px 6px;
     margin-top: 0;
+    background: #08000f;
+    color: #cce5ff;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus,
@@ -424,7 +461,7 @@ select[multiple] {
 /* FORM BUTTONS */
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: #79aec8;
+    background: linear-gradient(45deg, #210644, #2c0546, #340444);
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -439,7 +476,7 @@ a.button {
 .button:active, input[type=submit]:active, input[type=button]:active,
 .button:focus, input[type=submit]:focus, input[type=button]:focus,
 .button:hover, input[type=submit]:hover, input[type=button]:hover {
-    background: #609ab6;
+    background: linear-gradient(-45deg, #210644, #2c0546, #340444);
 }
 
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
@@ -450,13 +487,13 @@ a.button {
     float: right;
     border: none;
     font-weight: 400;
-    background: #417690;
+    background: green;
 }
 
 .button.default:active, input[type=submit].default:active,
 .button.default:focus, input[type=submit].default:focus,
 .button.default:hover, input[type=submit].default:hover {
-    background: #205067;
+    background:  rgb(0, 117, 0);
 }
 
 .button[disabled].default,
@@ -471,7 +508,6 @@ input[type=button][disabled].default {
 .module {
     border: none;
     margin-bottom: 30px;
-    background: #fff;
 }
 
 .module p, .module ul, .module h3, .module h4, .module dl, .module pre {
@@ -495,15 +531,15 @@ input[type=button][disabled].default {
     margin: 0;
     padding: 8px;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 17px;
     text-align: left;
-    background: #79aec8;
-    color: #fff;
+    background: linear-gradient(-45deg, #04043a, #12093d, #210644, #2c0546, #340444);
+    border-radius: 10px;
 }
 
 .module caption,
 .inline-group h2 {
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -522,16 +558,16 @@ ul.messagelist {
 ul.messagelist li {
     display: block;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 17px;
     padding: 10px 10px 10px 65px;
     margin: 0 0 10px 0;
-    background: #dfd url(../img/icon-yes.svg) 40px 12px no-repeat;
+    background: rgb(15, 141, 15) url(../img/icon-yes.svg) 40px 12px no-repeat;
     background-size: 16px auto;
     color: #333;
 }
 
 ul.messagelist li.warning {
-    background: #ffc url(../img/icon-alert.svg) 40px 14px no-repeat;
+    background: rgb(201, 201, 38) url(../img/icon-alert.svg) 40px 14px no-repeat;
     background-size: 14px auto;
 }
 
@@ -541,7 +577,7 @@ ul.messagelist li.error {
 }
 
 .errornote {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     display: block;
     padding: 10px 12px;
@@ -561,7 +597,7 @@ ul.errorlist {
 }
 
 ul.errorlist li {
-    font-size: 13px;
+    font-size: 17px;
     display: block;
     margin-bottom: 4px;
 }
@@ -601,17 +637,17 @@ td ul.errorlist + input, td ul.errorlist + select, td ul.errorlist + textarea {
 }
 
 .description {
-    font-size: 12px;
+    font-size: 16px;
     padding: 5px 0 0 12px;
 }
 
 /* BREADCRUMBS */
 
 div.breadcrumbs {
-    background: #79aec8;
+    background: linear-gradient(45deg, #04043a, #12093d, #210644, #2c0546, #340444);
     padding: 10px 40px;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     color: #c4dce8;
     text-align: left;
 }
@@ -658,7 +694,7 @@ a.deletelink:focus, a.deletelink:hover {
 /* OBJECT TOOLS */
 
 .object-tools {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     padding-left: 0;
     float: right;
@@ -691,7 +727,7 @@ a.deletelink:focus, a.deletelink:hover {
     padding: 3px 12px;
     background: #999;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #fff;
@@ -748,6 +784,7 @@ table#change-history tbody th {
 #container > .main {
     display: flex;
     flex: 1 0 auto;
+    border: none;
 }
 
 .main > .content {
@@ -813,7 +850,7 @@ table#change-history tbody th {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background: #417690;
+    background: linear-gradient(-45deg, #04043a, #12093d, #210644, #2c0546, #340444);
     color: #ffc;
     overflow: hidden;
 }
@@ -834,17 +871,19 @@ table#change-history tbody th {
     padding: 0;
     margin: 0 20px 0 0;
     font-weight: 300;
-    font-size: 24px;
-    color: #f5dd5d;
+    font-size: 28px;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
-    color: #f5dd5d;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 #branding h2 {
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 18px;
     margin: -8px 0 8px 0;
     font-weight: normal;
     color: #ffc;
@@ -859,10 +898,11 @@ table#change-history tbody th {
     padding: 0;
     margin: 0 0 0 20px;
     font-weight: 300;
-    font-size: 11px;
+    font-size: 18px;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
     text-align: right;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 #user-tools a {
@@ -877,23 +917,23 @@ table#change-history tbody th {
 
 /* SIDEBAR */
 
-#content-related {
+/* #content-related {
     background: #f8f8f8;
-}
+} */
 
 #content-related .module {
-    background: none;
+    background: linear-gradient(0deg, #04043a, #12093d, #210644, #2c0546, #340444);
+    border-radius: 10px;
 }
 
 #content-related h3 {
-    font-size: 14px;
-    color: #666;
+    font-size: 18px;
     padding: 0 16px;
     margin: 0 0 16px;
 }
 
 #content-related h4 {
-    font-size: 13px;
+    font-size: 17px;
 }
 
 #content-related p {
@@ -917,8 +957,7 @@ table#change-history tbody th {
     padding: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid #eaeaea;
-    font-size: 18px;
-    color: #333;
+    font-size: 22px;
 }
 
 .delete-confirmation form input[type="submit"] {
