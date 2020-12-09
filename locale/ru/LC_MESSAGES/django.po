@@ -166,8 +166,6 @@ msgid "Quick match"
 msgstr "Быстрая игра"
 
 #: .\game_modes\templates\game_modes\base.html:41
-#, fuzzy
-#| msgid "eady to rumble"
 msgid "Ready to rumble"
 msgstr "К драке готов"
 

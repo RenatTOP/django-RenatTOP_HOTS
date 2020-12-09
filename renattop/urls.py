@@ -12,7 +12,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', include('home.urls')),
-    path('brawl/', include('brawl.urls')),
+    path('aram/', include('brawl.urls')),
     path('battlegrounds/', include('battlegrounds.urls')),
     path('game_modes/', include('game_modes.urls')),
     path('heroes/', include('heroes.urls')),

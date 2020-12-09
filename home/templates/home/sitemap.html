@@ -7,7 +7,7 @@
     <div id="cont">
         <ul class="level-0">
             <li class="lhead">{% trans "Home" %}<span class="lcount">1 {% trans "page" %}</span></li>
-            <li class="lpage last-page"><a href="home"
+            <li class="lpage last-page"><a href="{% url 'home:index' %}"
                             title="Home">{% trans "Home" %}</a></li>
             <li>
                 <ul class="level-1">
@@ -29,7 +29,7 @@
                     </li>
                     <li>
                         <ul class="level-1">
-                            <li class="lhead">{% trans "Battlegrounds" %}<span class="lcount">15
+                            <li class="lhead">{% trans "Battlegrounds" %}<span class="lcount">{{bg|length}}
                                             {% trans "pages" %}</span></li>
                             {% for b in bg|dictsort:'title' %}
                             <li class="lpage"><a
@@ -47,7 +47,7 @@
                                     title="Heroes">{% trans "Heroes" %}</a></li>
                     <li>
                             <ul class="level-2">
-                                    <li class="lhead">{% trans "Tank" %}<span class="lcount">11
+                                    <li class="lhead">{% trans "Tank" %}<span class="lcount">{{tank|length}}
                                                     {% trans "pages" %}</span></li>
                                     {% for t in tank|dictsort:'title' %}
                                     <li class="lpage"><a
@@ -56,7 +56,7 @@
                                     {% endfor %}
                             </ul>
                             <ul class="level-2">
-                                    <li class="lhead">{% trans "Bruiser" %}<span class="lcount">15
+                                    <li class="lhead">{% trans "Bruiser" %}<span class="lcount">{{bruiser|length}}
                                                     {% trans "pages" %}</span></li>
                                     {% for br in bruiser|dictsort:'title' %}
                                     <li class="lpage"><a
@@ -65,7 +65,7 @@
                                     {% endfor %}
                             </ul>
                             <ul class="level-2">
-                                    <li class="lhead">{% trans "Melee Assassin" %}<span class="lcount">11
+                                    <li class="lhead">{% trans "Melee Assassin" %}<span class="lcount">{{melee|length}}
                                                     {% trans "pages" %}</span></li>
                                     {% for m in melee|dictsort:'title' %}
                                     <li class="lpage"><a
@@ -74,7 +74,7 @@
                                     {% endfor %}
                             </ul>
                             <ul class="level-2">
-                                    <li class="lhead">{% trans "Ranged Assassin" %}<span class="lcount">29
+                                    <li class="lhead">{% trans "Ranged Assassin" %}<span class="lcount">{{ranged|length}}
                                                     {% trans "pages" %}</span></li>
                                     {% for r in ranged|dictsort:'title' %}
                                     <li class="lpage"><a
@@ -83,7 +83,7 @@
                                     {% endfor %}
                             </ul>
                             <ul class="level-2">
-                                    <li class="lhead">{% trans "Support" %}<span class="lcount">4
+                                    <li class="lhead">{% trans "Support" %}<span class="lcount">{{support|length}}
                                                     {% trans "pages" %}</span></li>
                                     {% for s in support|dictsort:'title' %}
                                     <li class="lpage"><a
@@ -92,7 +92,7 @@
                                     {% endfor %}
                             </ul>
                             <ul class="level-2">
-                                    <li class="lhead">{% trans "Healer" %}<span class="lcount">16
+                                    <li class="lhead">{% trans "Healer" %}<span class="lcount">{{healer|length}}
                                                     {% trans "pages" %}</span></li>
                                     {% for h in healer|dictsort:'title' %}
                                     <li class="lpage"><a
