@@ -31,25 +31,19 @@ msgstr "Задачи на поле боя"
 msgid "Battlegrounds"
 msgstr "Поля боя"
 
-# brawl
-#: .\brawl\templates\brawl\base.html:8 .\brawl\templates\brawl\base.html:10
-#: .\brawl\templates\brawl\base.html:20
-msgid "Hero brawl"
-msgstr "Потасовка"
-
 #: .\brawl\templates\brawl\base.html:21
 msgid "The game mode that breaks all the rules!"
 msgstr "Новый игровой режим — играйте не по правилам!"
 
 #: .\brawl\templates\brawl\base.html:23
 msgid ""
-"In a nutshell, Heroes Brawl is Heroes of the Storm, seen through the lens of "
+"In a nutshell, ARAM is Heroes of the Storm, seen through the lens of "
 "delightful madness. Play on unique maps with surreal twists and with custom "
 "rulesets that turn everything you thought you knew about the game on its "
 "head. Weekly rewards await. Take a break from the conquest of the Nexus, "
 "gather your friends, and check out what this new mode has to offer."
 msgstr ""
-"Если коротко, то «Потасовки» — это воплощение совершенно безумных (на первый "
+"Если коротко, то «ARAM» — это воплощение совершенно безумных (на первый "
 "взгляд) идей в Heroes of the Storm. Играйте на уникальных картах, где "
 "используются невиданные доселе элементы! Вас ждут особые правила и условия, "
 "которые поставят все с ног на голову! Разумеется, не обойдется и без "
@@ -63,9 +57,9 @@ msgstr "Арены, мутаторы и поля боя с одной линие
 
 #: .\brawl\templates\brawl\base.html:29
 msgid ""
-"There are three kinds of Heroes Brawl battlegrounds: standard maps with "
+"There are three kinds of ARAM battlegrounds: standard maps with "
 "mutators, brand-new arenas, and single-lane battlegrounds. All made "
-"specifically for Heroes Brawl."
+"specifically for ARAM."
 msgstr ""
 "Всего в новом режиме представлено три типа полей боя: обычные поля боя с "
 "мутаторами, новые арены и поля боя с одной линией. Все эти поля боя "
@@ -91,7 +85,7 @@ msgstr "Уникальный<br> набор героев"
 
 #: .\brawl\templates\brawl\base.html:40
 msgid ""
-"We’re even switching up how you choose your hero! For each brawl, you may "
+"We’re even switching up how you choose your hero! For each ARAM, you may "
 "either have preset heroes, you may shuffle (pick your hero from a custom "
 "lineup), or pure random. Look for new hero selection modes coming soon."
 msgstr ""
@@ -191,23 +185,18 @@ msgstr ""
 "примерно равного уровня мастерства. Игры в этом режиме идут в зачет "
 "ежедневных заданий; также вы получите дополнительное золото и опыт."
 
-#: .\game_modes\templates\game_modes\base.html:45
-#: .\home\templates\home\index.html:118 .\templates\site\navbar.html:20
-msgid "Brawl"
-msgstr "Потасовка"
-
 #: .\game_modes\templates\game_modes\base.html:46
 msgid "All Bets Are Off"
 msgstr "Бои без правил!"
 
 #: .\game_modes\templates\game_modes\base.html:47
 msgid ""
-"Each week, Heroes Brawl presents you with a new set of crazy mutators that "
+"Each week, ARAM presents you with a new set of crazy mutators that "
 "turn everything you thought you knew about the game on its head. From unique "
 "battlegrounds to crazy team composition rules to completely rewritten rules "
 "of engagement, you’ll never know what’s in store!"
 msgstr ""
-"Каждую неделю в новом режиме «Потасовка» вас ждут совершенно безумные "
+"Каждую неделю в новом режиме «ARAM» вас ждут совершенно безумные "
 "мутаторы, которые перевернут знакомый вам игровой процесс вверх тормашками. "
 "Это будут уникальные поля боя, невероятные сочетания героев и совершенно "
 "непривычные правила игры — неограниченный полет фантазии!"
@@ -258,11 +247,9 @@ msgstr "Лига нексуса"
 
 #: .\game_modes\templates\game_modes\base.html:60
 msgid ""
-"Battle solo or with friends – Must have access to 16 heroes at level 5 or "
-"higher and an account level of 50 or higher."
+"Battle solo or with friends – Must have access an account level of 50 or higher."
 msgstr ""
-"Бейтесь в одиночку или с друзьями! У вас должна быть открыто 16 героев 5-го "
-"уровня и выше, а также учетная запись 50-го уровня или выше."
+"Бейтесь в одиночку или с друзьями! У вас должна быть учетная запись 50-го уровня или выше."
 
 #: .\game_modes\templates\game_modes\base.html:61
 msgid ""

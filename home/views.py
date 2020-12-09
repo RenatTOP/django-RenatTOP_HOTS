@@ -12,7 +12,9 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    hero = Hero.objects.filter(title_en__in=['Imperius', 'Deathwing'])
+    hero = Hero.objects.filter(title_en__in=['Malfurion', 'Valla', 'Gazlowe', 'Johanna',
+                                            'Thrall', 'Dehaka', 'Tychus', 'Fenix', 'Whitemane',
+                                            'Sylvanas', 'Malthael', 'Deckard', 'Ana', 'Orphea'])
     context = {'hero': hero}
     return render(request, 'home/index.html', context)
 

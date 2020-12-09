@@ -21,9 +21,6 @@
         {% include 'site/navbar.html' %}
         </header>
         <main class="container-fluid">
-        {% if h.title_en == 'Cho' or h.title_en == 'Gall' %}
-            {% include 'heroes/includes/ChoGall/index.html' %}
-        {% else %}
             <div class="row">
                 <div class="col-12">
                     <h1>{{h.title}}</h1>
@@ -290,7 +287,7 @@
                     </div>
                     <div class="col zero"></div>
                 {% else %}
-                    <div class="col" id="ab" data-aos="fade-{{aos3}}">
+                    <div class="col" id="ab" data-aos="fade-right">
                         <ul>
                             <li>
                                 <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
@@ -302,7 +299,6 @@
                     </div>
                 {% endif %}
             </div>
-        {% endif %}
             <div>
                 <h2>{% trans "Other heroes" %}</h2>
                 <div class="randomHeroes"></div>
