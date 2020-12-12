@@ -984,3 +984,9 @@ msgstr "Заряд"
 
 msgid "Ammo"
 msgstr "Патроны"
+
+msgid "Your message has not been sent"
+msgstr "Ваше сообщение не было отправлено"
+
+msgid "Your message has been sent"
+msgstr "Ваше сообщение отправлено"
