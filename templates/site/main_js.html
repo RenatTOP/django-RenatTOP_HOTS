@@ -1,6 +1,16 @@
 {% load static %}
 
 <script src="{% static 'home/js/jquery.js' %}"></script>
+<script src="{% static 'home/js/lazyload.js' %}"></script>
+<script src="{% static 'home/js/jquery.disqusloader.js' %}"></script>
+<script>
+    var options = {
+        scriptUrl: "//fan-site-heroes-of-the-storm.disqus.com/embed.js",
+        laziness: 0,
+        throttle: 250,
+    };
+    $.disqusLoader(".disqus", options);
+</script>
 <script src="{% static 'home/js/additem.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

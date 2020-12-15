@@ -46,7 +46,7 @@
                     {% include 'heroes/includes/greymane/bgm.html' %}
                 {% else %}
                 <div class="col-12" data-aos="zoom-in">
-                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/bgm.jpg" alt="" class="headerm">
+                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/bgm.jpg" alt="Background" class="lazy headerm">
                 </div>
                 {% endif %}
 
@@ -76,7 +76,7 @@
                             <span class="text" id="dmg">{% trans "Damage" %}</span>
                         </li>
                         <li>
-                            <img src="https://renattop.github.io/image/home/stat-icons.png" alt="" class="stat-icon">
+                            <img src="" data-src="https://renattop.github.io/image/home/stat-icons.png" alt="stat-icon" class="lazy stat-icon">
                             {% for i in h.points.d %}
                             <p class="stats-damage">&#8291;</p>
                             {% endfor %}
@@ -85,7 +85,7 @@
                             <span class="text" id="spt">{% trans "Utility" %}</span>
                         </li>
                         <li>
-                            <img src="https://renattop.github.io/image/home/stat-icons0.png" alt="" class="stat-icon">
+                            <img src="" data-src="https://renattop.github.io/image/home/stat-icons0.png" alt="stat-icon" class="lazy stat-icon">
                             {% for i in h.points.s %}
                             <p class="stats-support">&#8291;</p>
                             {% endfor %}
@@ -94,7 +94,7 @@
                             <span class="text" id="hp">{% trans "Survivability" %}</span>
                         </li>
                         <li>
-                        <img src="https://renattop.github.io/image/home/stat-icons1.png" alt="" class="stat-icon">
+                        <img src="" data-src="https://renattop.github.io/image/home/stat-icons1.png" alt="stat-icon" class="lazy stat-icon">
                         {% for i in h.points.h %}
                         <p class="stats-hp">&#8291;</p>
                         {% endfor %}
@@ -103,7 +103,7 @@
                             <span class="text" id="dfct">{% trans "Complexity" %}</span>
                         </li>
                         <li>
-                            <img src="https://renattop.github.io/image/home/stat-icons2.png" alt="" class="stat-icon">
+                            <img src="" data-src="https://renattop.github.io/image/home/stat-icons2.png" alt="stat-icon" class="lazy stat-icon">
                             {% for i in h.points.f %}
                             <p class="stats-difficult">&#8291;</p>
                             {% endfor %}
@@ -117,7 +117,7 @@
                         {{h.hero_type}}
                         </li>
                         <li>
-                            <img src="https://renattop.github.io/image/heroes/{{h.hero_type_en}}.png" alt="" class="icon" title="{{h.hero_type}}">
+                            <img src="" data-src="https://renattop.github.io/image/heroes/{{h.hero_type_en}}.png" alt="{{h.hero_type}}" class="lazy icon" title="{{h.hero_type}}">
                         </li>
                     </ul>
                 </div>
@@ -134,7 +134,7 @@
                         {% else %}
                             <li>
                                 {% for ab in "123" %}
-                                <a href="#ab{{ab}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{ab}}.png" alt="" class="base"></a>
+                                <a href="#ab{{ab}}"><img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{ab}}.png" alt="{% trans 'Primary Ability' %} {{ab}}" class="lazy base"></a>
                                 {% endfor %}
                             </li>
                         {% endif %}
@@ -142,18 +142,18 @@
                         <li>
                             {% if h.title_en == 'Varian' %}
                                 {% for abh in "12" %}
-                                <a href="#h{{abh}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="" class="heroic"></a>
+                                <a href="#h{{abh}}"><img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="{% trans 'Heroic Abilities' %} {{abh}}" class="lazy heroic"></a>
                                 {% endfor %}
-                                <a href="#h3"><img src="https://renattop.github.io/image/heroes/Varian/h3.png" alt="" class="heroic"></a>
+                                <a href="#h3"><img src="" data-src="https://renattop.github.io/image/heroes/Varian/h3.png" alt="{% trans 'Heroic Abilities' %} 3" class="lazy heroic"></a>
                             {% else %}
                                 {% for abh in "12" %}
-                                <a href="#h{{abh}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="" class="heroic"></a>
+                                <a href="#h{{abh}}"><img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="{% trans 'Heroic Abilities' %} {{abh}}" class="lazy heroic"></a>
                                 {% endfor %}
                             {% endif %}
                         </li>
                         <li class="ab" id="trait">{% trans "Trait" %}</li>
                         <li>
-                            <a href="#ab"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="base"></a>
+                            <a href="#ab"><img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="{% trans 'Trait' %}" class="lazy base"></a>
                         </li>
                     </ul>
                 </div>
@@ -181,9 +181,9 @@
                         <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down'%}">
                             <ul>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="{% cycle h.ability1 h.ability2%} image" class="lazy img-ab">
                                 </li>
-                                <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
+                                <li><img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="{% cycle h.ability1 h.ability2%} icon" class="lazy mab">
                                 </li>
                                 <li>
                                     <h3>{% cycle h.ability1 h.ability2%}</h3><em>{% cycle h.ab_desc1 h.ab_desc2%}</em>
@@ -197,9 +197,9 @@
                         <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down' 'right' %}">
                             <ul>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="{% cycle h.ability1 h.ability2 h.ability3 %} image" class="lazy img-ab">
                                 </li>
-                                <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
+                                <li><img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="{% cycle h.ability1 h.ability2 h.ability3 %} icon" class="lazy mab">
                                 </li>
                                 <li>
                                     <h3>{% cycle h.ability1 h.ability2 h.ability3 %}</h3><em>{% cycle h.ab_desc1 h.ab_desc2 h.ab_desc3 %}</em>
@@ -214,10 +214,10 @@
                         <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
                             <ul>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="{{ h.heroic1 }} image" class="lazy img-ab">
                                 </li>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="{{ h.heroic1 }} icon" class="lazy mab">
                                 </li>
                                 <li>
                                     <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
@@ -231,13 +231,13 @@
                         <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
                             <ul>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="{% cycle h.heroic1 h.heroic2 %} image" class="lazy img-ab">
                                 </li>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="{% cycle h.heroic1 h.heroic2 %} icon" class="lazy mab">
                                 </li>
                                 <li>
-                                    <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
+                                    <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
                                 </li>
                             </ul>
                         </div>
@@ -245,10 +245,10 @@
                 <div class="col" id="h3" data-aos="fade-right">
                     <ul>
                         <li>
-                            <img src="https://renattop.github.io/image/heroes/Varian/img-h3.jpg" alt="" class="img-ab">
+                            <img src="" data-src="https://renattop.github.io/image/heroes/Varian/img-h3.jpg" alt="{% trans 'Twin Blades of Fury' %} image" class="lazy img-ab">
                         </li>
                         <li>
-                            <img src="https://renattop.github.io/image/heroes/Varian/h3.png" alt="" class="mab">
+                            <img src="" data-src="https://renattop.github.io/image/heroes/Varian/h3.png" alt="{% trans 'Twin Blades of Fury' %} icon" class="lazy mab">
                         </li>
                         <li>
                             {% include 'heroes/includes/varian/heroic.html' %}
@@ -261,10 +261,10 @@
                         <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
                             <ul>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="{% cycle h.heroic1 h.heroic2 %} image" class="lazy img-ab">
                                 </li>
                                 <li>
-                                    <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
+                                    <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="{% cycle h.heroic1 h.heroic2 %} icon" class="lazy mab">
                                 </li>
                                 <li>
                                     <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
@@ -278,7 +278,7 @@
                     <div class="col" id="ab" data-aos="fade-up">
                         <ul>
                             <li>
-                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
+                                <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="{{h.ab_trait}} icon" class="lazy mab">
                             </li>
                             <li>
                                 <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
@@ -290,7 +290,7 @@
                     <div class="col" id="ab" data-aos="fade-right">
                         <ul>
                             <li>
-                                <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
+                                <img src="" data-src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="{{h.ab_trait}} icon" class="lazy mab">
                             </li>
                             <li>
                                 <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
@@ -319,9 +319,6 @@
         <script src="{% static 'home/js/aos.js' %}"></script>
         {% endwith %}
         {% include 'site/main_js.html' %}
-        <script src="{% static 'heroes/js/jquery.lookingfor.min.js' %}"></script>
-        <script src="{% static 'heroes/js/mixitup.min.js' %}"></script>
-        <script src="{% static 'heroes/js/mixitup-multifilter.min.js' %}"></script>
         <script src="{% static 'heroes/js/heroes.js' %}"></script>
         <script src="{% static 'heroes/js/switch.js' %}"></script>
     </body>
