@@ -40,6 +40,10 @@
     .navbar-collapse {
         padding-left: 70px;
     }
+
+    .auth-btn {
+        max-width: 150px;
+    }
 }
 
 .auth a {
