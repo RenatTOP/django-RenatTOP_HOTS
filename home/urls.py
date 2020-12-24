@@ -17,4 +17,7 @@ urlpatterns = [
     path('user/<int:fav_id>/del_fav_hero/', views.del_favourite_hero, name='del_favourite_hero'),
     path('user/<int:fav_id>/add_fav_bg/', views.favourite_bg, name='favourite_bg'),
     path('user/<int:fav_id>/del_fav_bg/', views.del_favourite_bg, name='del_favourite_bg'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

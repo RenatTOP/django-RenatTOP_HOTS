@@ -4,7 +4,7 @@
 {% block title %}{% trans "Profile" %}{% endblock %}
 {% block content %}
     <div>
-        <img src="https://renattop.github.io/image/heroes/Imperius/Imperius.png" alt="avatar" class="avatar"/>
+        <img src="{{ MEDIA_URL }}{{ user.Avatar_images.all.0.image }}" alt="avatar" class="avatar"/>
     </div>
     <h1>{{user.username}}</h1>
     <div class="row">
@@ -13,7 +13,9 @@
             <div class="row">
                 {% for hero in user.favorite_heroes.all|dictsort:'title' %}
                     <div class="col {{hero.points.u}} {{hero.hero_type_en}} {{hero.points.q}}">
-                        <a href="{% url 'heroes:Heroes' hero.title_en %}"><img src="https://renattop.github.io/image/heroes/{{hero.title_en}}/{{hero.title_en}}.png" alt="{{hero.title}}">
+                        <a href="{% url 'heroes:Heroes' hero.title_en %}"><img
+                                data-src="https://renattop.github.io/image/heroes/{{hero.title_en}}/{{hero.title_en}}.png"
+                                alt="{{hero.title}}" loading="lazy" class="lazyload">
                             <h3>{{hero.title}}</h3>
                         </a>
                     </div>
@@ -28,7 +30,7 @@
                 {% for bg in user.favorite_bg.all|dictsort:'title' %}
                     <div class="col">
                         <a href="{% url 'battlegrounds:bg' bg.url %}"><img
-                                src="{{ bg.preview_url}}" alt="{{bg.title}}">
+                                data-src="{{ bg.preview_url}}" alt="{{bg.title}}" loading="lazy" class="lazyload">
                             <h3>{% trans bg.title %}</h3>
                         </a>
                 </div>

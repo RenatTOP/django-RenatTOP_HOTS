@@ -32,7 +32,7 @@
             <div class="col">
                 <ul class="title_min">
                     <li>
-                        <img src="" data-src="{{bg.pictures_url.p1}}" alt="{{bg.title_min1}}" class="lazy obj">
+                        <img data-src="{{bg.pictures_url.p1}}" alt="{{bg.title_min1}}" loading="lazy" class="lazyload obj">
                     </li>
                     <li>
                         <h3>{{bg.title_min1}}</h3>
@@ -43,7 +43,7 @@
             <div class="col">
                 <ul class="title_min">
                     <li>
-                        <img src="" data-src="{{bg.pictures_url.p2}}" alt="{{bg.title_min2}}" class="lazy obj">
+                        <img data-src="{{bg.pictures_url.p2}}" alt="{{bg.title_min2}}" loading="lazy" class="lazyload obj">
                     </li>
                     <li>
                         <h3>{{bg.title_min2}}</h3>
@@ -54,7 +54,7 @@
             <div class="col">
                 <ul class="title_min">
                     <li>
-                        <img src="" data-src="{{bg.pictures_url.p3}}" alt="{{bg.title_min3}}" class="lazy obj">
+                        <img data-src="{{bg.pictures_url.p3}}" alt="{{bg.title_min3}}" loading="lazy" class="lazyload obj">
                     </li>
                     <li>
                         <h3>{{bg.title_min3}}</h3>
@@ -84,10 +84,10 @@
                 <h3>{% trans "Map" %}</h3>
                 <img src="{{bg.big_pictures_url.b1}}" alt="" class="image">
             </div>
-                <img src="" data-src="{{bg.big_pictures_url.b2}}" alt="Image 1" class="lazy image">
-                <img src="" data-src="{{bg.big_pictures_url.b3}}" alt="Image 2" class="lazy image">
-                <img src="" data-src="{{bg.big_pictures_url.b4}}" alt="Image 3" class="lazy image">
-                <img src="" data-src="{{bg.big_pictures_url.b5}}" alt="Image 4" class="lazy image">
+                <img data-src="{{bg.big_pictures_url.b2}}" alt="Image 1" loading="lazy" class="lazyload image">
+                <img data-src="{{bg.big_pictures_url.b3}}" alt="Image 2" loading="lazy" class="lazyload image">
+                <img data-src="{{bg.big_pictures_url.b4}}" alt="Image 3" loading="lazy" class="lazyload image">
+                <img data-src="{{bg.big_pictures_url.b5}}" alt="Image 4" loading="lazy" class="lazyload image">
         </div>
         {% endwith %}
             {% include 'site/disqus.html' %}

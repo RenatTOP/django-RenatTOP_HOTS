@@ -1,7 +1,19 @@
 {% load static %}
 
 <script src="{% static 'home/js/jquery.js' %}"></script>
-<script src="{% static 'home/js/lazyload.js' %}"></script>
+<script>
+    (async () => {
+        if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll("img.lazyload");
+        images.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        const lazySizesLib = import("{% static 'home/js/lazysizes.js' %}");
+        lazySizes.init();
+    }
+})();
+</script>
 <script src="{% static 'home/js/jquery.disqusloader.js' %}"></script>
 <script>
     var options = {
