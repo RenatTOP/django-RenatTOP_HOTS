@@ -20,6 +20,9 @@
         scriptUrl: "//fan-site-heroes-of-the-storm.disqus.com/embed.js",
         laziness: 1,
         throttle: 250,
+        disqusConfig: function(){
+            this.language = "{{ LANGUAGE_CODE }}";
+        }
     };
     $.disqusLoader(".disqus", options);
 </script>

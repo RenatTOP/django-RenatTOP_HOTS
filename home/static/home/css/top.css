@@ -18,7 +18,7 @@
     height: 50px;
     text-align: center;
     line-height: 40px;
-    background: url(https://renattop.github.io/image/home/navigation_arrow_up.svg);
+    background: url(https://renattop.github.io/project_HOTS/image/home/navigation_arrow_up.svg);
     cursor: pointer;
     display: none;
     font-size: 0px;
@@ -31,7 +31,7 @@
 /* Customs cursors */
 
 body {
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 .container-fluid {
@@ -45,11 +45,11 @@ body {
 }
 
 a {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 button {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 /* Navbar fixation for scrolling */

@@ -9,6 +9,7 @@ from django.utils.translation import gettext
 from battlegrounds.models import Battleground
 from django.core.mail.message import BadHeaderError
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
@@ -24,7 +25,7 @@ def agreement(request):
     return render(request, 'home/agreement.html')
 
 
-class Profile(DetailView):
+class Profile(LoginRequiredMixin,DetailView):
     model = User
     template_name = 'home/profile.html'
     slug_field = 'username'

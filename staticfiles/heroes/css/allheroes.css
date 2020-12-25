@@ -4,7 +4,7 @@ body {
     display: block !important;
     margin: 0 auto !important;
     overflow-x: hidden;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 div {
@@ -136,7 +136,7 @@ div {
 }
 
 a {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 h1 {
@@ -437,7 +437,7 @@ p {
     max-width: 100px;
     width: auto;
     height: auto;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 .ab, .bicon {
@@ -459,7 +459,7 @@ p {
     max-width: 100px;
     width: auto;
     height: auto;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 .img-ab {
