@@ -54,6 +54,11 @@ div {
     }
 }
 
+.col-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 .col-3 {
     background: linear-gradient(to top, #170e3d, #08000f);
     border-right: 15px solid #08000f;
