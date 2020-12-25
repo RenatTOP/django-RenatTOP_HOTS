@@ -1,6 +1,6 @@
 footer {
     background: linear-gradient(#08000f, #150c3b);
-    height: 200px;
+    height: 220px;
 }
 
 @media(max-width:630px) {

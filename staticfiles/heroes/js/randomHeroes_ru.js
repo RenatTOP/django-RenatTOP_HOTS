@@ -77,8 +77,8 @@ heroes[14] = `<div class="rdmHeroes col-3" data-aos="flip-left">
     </a>
 </div>`;
 heroes[15] = `<div class="rdmHeroes col-3" data-aos="flip-left">
-    <a href="/heroes/Vikings"><img src="https://renattop.github.io/project_HOTS/image/heroes/LostVikings/bgm.jpg" alt="" class="rdmImg">
-        <h3 class="rdmheroesh3">Викинги</h3>
+    <a href="/heroes/The Lost Vikings"><img src="https://renattop.github.io/project_HOTS/image/heroes/The Lost Vikings/bgm.jpg" alt="" class="rdmImg">
+        <h3 class="rdmheroesh3">Потерявшиеся Викинги</h3>
     </a>
 </div>`;
 heroes[16] = `<div class="rdmHeroes col-3" data-aos="flip-left">
