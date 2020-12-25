@@ -65,14 +65,14 @@
             <div class="w-100"></div>
             <div class="fav">
                 <td>
-                    <form method='POST' action="{% url 'home:favourite_bg' bg.id %}">
+                    <form method='POST' action="{% url 'home:favourite_bg' bg.id %}" id="add_fav">
                         {% csrf_token %}
                         <input type='hidden' name='hero' value={{ hero.id }}>
                         <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
                     </form>
                 </td>
                 <td>
-                    <form method='POST' action="{% url 'home:del_favourite_bg' bg.id %}">
+                    <form method='POST' action="{% url 'home:del_favourite_bg' bg.id %}" id="del_fav">
                         {% csrf_token %}
                         <input type='hidden' name='hero' value={{ hero.id }}>
                         <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
@@ -97,6 +97,16 @@
     </footer>
     <a class="back_to_top"></a>
     {% include 'site/main_js.html' %}
+    <script>
+        const userFavHeroes = "{{user.favorite_bg.all}}";
+        if (userFavHeroes.includes('{{battleground.title}}')) {
+            $("#add_fav").hide();
+            $("#del_fav").show();
+        } else {
+            $("#add_fav").show();
+            $("#del_fav").hide();
+        }
+    </script>
 </body>
 
 </html>
