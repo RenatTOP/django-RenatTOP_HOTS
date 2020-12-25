@@ -103,6 +103,7 @@ ENV/
 datadump.json
 .DS_Store
 *.sqlite3
+media/
 *.pyc
 *.db
 *.pid
