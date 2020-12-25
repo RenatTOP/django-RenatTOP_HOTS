@@ -55,14 +55,14 @@
                 {% endif %}
                 <div class="fav_buttons">
                     <td>
-                        <form method='POST' action="{% url 'home:favourite_hero' hero.id %}">
+                        <form method='POST' action="{% url 'home:favourite_hero' hero.id %}" id="add_fav">
                                 {% csrf_token %}
                                 <input type='hidden' name='hero' value={{ hero.id }}>
                                 <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
                         </form>
                     </td>
                     <td>
-                        <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}">
+                        <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}" id="del_fav">
                             {% csrf_token %}
                             <input type='hidden' name='hero' value={{ hero.id }}>
                             <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
@@ -329,6 +329,16 @@
         <script src="{% static 'home/js/aos.js' %}"></script>
         {% endwith %}
         {% include 'site/main_js.html' %}
+        <script>
+            const userFavHeroes = "{{user.favorite_heroes.all}}";
+            if (userFavHeroes.includes('{{hero.title}}')) {
+                $("#add_fav").hide();
+                $("#del_fav").show();
+            } else {
+                $("#add_fav").show();
+                $("#del_fav").hide();
+            }
+        </script>
         <script src="{% static 'heroes/js/switch.js' %}"></script>
     </body>
 
