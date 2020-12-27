@@ -437,7 +437,7 @@ heroes[86] = `<div class="rdmHeroes col-3" data-aos="flip-left">
     </a>
 </div>`;
 heroes[87] = `<div class="rdmHeroes col-3" data-aos="flip-left">
-    <a href="/heroes/Dva"><img src="https://renattop.github.io/project_HOTS/image/heroes/Dva/bgm.jpg" alt="" class="rdmImg">
+    <a href="/heroes/D.Va"><img src="https://renattop.github.io/project_HOTS/image/heroes/D.Va/bgm.jpg" alt="" class="rdmImg">
         <h3 class="rdmheroesh3">D.Va</h3>
     </a>
 </div>`;
