@@ -1,12 +1,12 @@
 body {
     display: block;
-    background: url(https://renattop.github.io/image/game/bg.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/bg.jpg) top center no-repeat;
     background-size: cover;
     background-color: #000d1a !important;
     padding: 0;
     max-width: 2500px;
     margin: 0 auto !important;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 .container-fluid {
@@ -56,23 +56,23 @@ h1 {
     width: 140px;
     height: 140px;
     border: 2.3px solid #88b8ff;
-    -webkit-box-shadow: 0 0 10px rgba(51,153,255,.5);
-    box-shadow: 0 0 10px rgba(51,153,255,.5);
+    -webkit-box-shadow: 0 0 10px rgba(51, 153, 255, .5);
+    box-shadow: 0 0 10px rgba(51, 153, 255, .5);
     border-radius: 100px;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 a {
     color: #cce5ff !important;
     text-decoration: none !important;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 a:hover {
     text-shadow: 0px 1px 1px rgba(229, 234, 255, 1);
 }
 
-button {
+.role button, .universe button, .rank button {
     background-color: transparent;
     border-color: transparent;
 }
@@ -126,7 +126,7 @@ p {
 }
 
 svg {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 .icons {

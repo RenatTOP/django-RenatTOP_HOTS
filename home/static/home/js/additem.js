@@ -19,40 +19,6 @@ try {
   });
 } catch (e) {}
 
-try {
-  let hero1 = raynor;
-  let hero2 = muradin;
-  let hero3 = sonya;
-  let hero4 = nazeebo;
-  let hero5 = uther;
-  let hero6 = jaina;
-  let hero7 = lucio;
-  let hero8 = tychus;
-  let hero9 = alexstrasza;
-  let hero10 = leoric;
-  let hero11 = arthas;
-  let hero12 = deathwing;
-  let hero13 = alarak;
-  let hero14 = tracer;
-
-  let hero = document.querySelectorAll(".rotation")
-
-  hero[0].innerHTML = hero1[10];
-  hero[1].innerHTML = hero2[10];
-  hero[2].innerHTML = hero3[10];
-  hero[3].innerHTML = hero4[10];
-  hero[4].innerHTML = hero5[10];
-  hero[5].innerHTML = hero6[10];
-  hero[6].innerHTML = hero7[10];
-  hero[7].innerHTML = hero8[10];
-  hero[8].innerHTML = hero9[10];
-  hero[9].innerHTML = hero10[10];
-  hero[10].innerHTML = hero11[10];
-  hero[11].innerHTML = hero12[10];
-  hero[12].innerHTML = hero13[10];
-  hero[13].innerHTML = hero14[10];
-} catch (e) {}
-
 //All stats
 try {
   var health = array[0][0];

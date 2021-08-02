@@ -3,272 +3,343 @@
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
 
-<head>
-    {% include 'site/main_head.html' %}
-    {% with hero as h %}
-    <meta name="description" content="{{h.title}} HOTS">
-    <link rel="stylesheet" href="{% static 'heroes/css/allheroes.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/aos.css' %}">
-    <title>{{h.title}}</title>
-</head>
+    <head>
+        {% include 'site/main_head.html' %}
+        {% with hero as h %}
+        <meta name="description" content="{{h.title}} HOTS">
+        <link rel="stylesheet" href="{% static 'heroes/css/allheroes.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/aos.css' %}">
+        <style>
+            {% include 'heroes/includes/spec_mana_heroes_css.html' %}
+        </style>
+        <title>{{h.title}}</title>
+    </head>
 
-<body>
-    {% include 'site/preloader.html' %}
-    <header>
-    {% include 'site/navbar.html' %}
-    </header>
-  <main class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <h1>{{h.title}}</h1>
-        <h3>{{h.title_min}}</h3>
-        <em>{{h.description}}</em>
-      </div>
-      {% if h.title_en == 'Valeera' %}
-        {% include 'heroes/includes/valeera/bg.html' %}
-      {% elif h.title_en == 'Greymane' %}
-        {% include 'heroes/includes/greymane/bg.html' %}
-      {% else %}
-        <div class="col-12" data-aos="zoom-in">
-          <video src="https://renattop.github.io/image/heroes/{{h.title_en}}/bg.webm" class="header" loop muted autoplay>
-          </video>
-        </div>
-      {% endif %}
-      {% if h.title_en == 'Valeera' %}
-        {% include 'heroes/includes/valeera/bgm.html' %}
-      {% elif h.title_en == 'Greymane' %}
-        {% include 'heroes/includes/greymane/bgm.html' %}
-      {% else %}
-      <div class="col-12" data-aos="zoom-in">
-        <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/bgm.jpg" alt="" class="headerm">
-      </div>
-    {% endif %}
-      {% if h.title_en == 'Deathwing' or h.title_en == 'Valeera' or h.title_en == 'Greymane' or h.title_en == 'Cho' or h.title_en == 'Gall' %}
-        {% include 'heroes/includes/special_btn.html' %}
-      {% endif %}
-      <td>
-        <form method='POST' action="{% url 'home:favourite_hero' hero.id %}">
-            {% csrf_token %}
-            <input type='hidden' name='hero' value={{ hero.id }}>
-              <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
-        </form>
-      </td>
-      <td>
-        <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}">
-            {% csrf_token %}
-            <input type='hidden' name='hero' value={{ hero.id }}>
-              <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
-        </form>
-      </td>
-      <div class="w-100"></div>
-      <div class="col" data-aos="fade-left">
-        <ul>
-          <li>
-            <span class="text" id="dmg">{% trans "Damage" %}</span>
-          </li>
-          <li>
-            <img src="https://renattop.github.io/image/home/stat-icons.png" alt="" class="stat-icon">
-            {% for i in h.points.d %}
-            <p class="stats-damage">&#8291;</p>
-            {% endfor %}
-          </li>
-          <li>
-            <span class="text" id="spt">{% trans "Utility" %}</span>
-          </li>
-          <li>
-            <img src="https://renattop.github.io/image/home/stat-icons0.png" alt="" class="stat-icon">
-            {% for i in h.points.s %}
-            <p class="stats-support">&#8291;</p>
-            {% endfor %}
-          </li>
-          <li>
-            <span class="text" id="hp">{% trans "Survivability" %}</span>
-          </li>
-          <li>
-            <img src="https://renattop.github.io/image/home/stat-icons1.png" alt="" class="stat-icon">
-            {% for i in h.points.h %}
-            <p class="stats-hp">&#8291;</p>
-            {% endfor %}
-          </li>
-          <li>
-            <span class="text" id="dfct">{% trans "Complexity" %}</span>
-          </li>
-          <li>
-            <img src="https://renattop.github.io/image/home/stat-icons2.png" alt="" class="stat-icon">
-            {% for i in h.points.f %}
-            <p class="stats-difficult">&#8291;</p>
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-      <div class="w-100 min510"></div>
-      <div class="col" data-aos="fade-left">
-        <ul>
-          <li class="bicon">
-            {{h.hero_type}}
-          </li>
-          <li>
-            <img src="https://renattop.github.io/image/heroes/{{h.hero_type_en}}.png" alt="" class="icon" title="{{h.hero_type}}">
-          </li>
-        </ul>
-      </div>
-      <div class="w-100 min1195"></div>
-      <div class="col" data-aos="fade-right">
-        <ul>
-          <li class="ab" id="basic">{% trans "Primary Abilities" %}</li>
-          {% if h.title_en == 'Deathwing' %}
-            {% include 'heroes/includes/deathwing/ab.html' %}
-          {% elif h.title_en == 'Valeera' %}
-            {% include 'heroes/includes/valeera/ab.html' %}
-          {% elif h.title_en == 'Greymane' %}
-            {% include 'heroes/includes/greymane/ab.html' %}
-          {% else %}
-            <li>
-              {% for ab in "123" %}
-              <a href="#ab{{ab}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{ab}}.png" alt="" class="base"></a>
-              {% endfor %}
-            </li>
-          {% endif %}
-          <li class="ab" id="heroic">{% trans "Heroic Abilities" %}</li>
-          <li>
-            {% for abh in "12" %}
-            <a href="#h{{abh}}"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="" class="heroic"></a>
-            {% endfor %}
-          </li>
-          <li class="ab" id="trait">{% trans "Trait" %}</li>
-          <li>
-            <a href="#ab"><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="base"></a>
-          </li>
-        </ul>
-      </div>
-      <div class="w-100 min510"></div>
-      <div class="col" data-aos="fade-right">
-        <ul>
-          <li class="stats" id="stat-lvl">
-            {% trans "Lvl" %}: <span class="lvl">0</span>
-          </li>
-          <li>
-            <input type="range" id="lvl" oninput="Lvl()" min="0" max="30" step="1" value="0">
-          </li>
-          <li class="stats" id="health">{% trans "Health" %}: <span id="hp-p"></span></li>
-          <li class="stats" id="regen-hp">{% trans "Regen" %}: <span id="rg-hp-p"></span></li>
-          <li class="stats" id="mana">{% trans "Mana" %}: <span id="m-p"></span></li>
-          <li class="stats" id="regen-m">{% trans "Regen" %}: <span id="rg-m-p"></span></li>
-          <li class="stats" id="dpa">{% trans "Damage per attack" %}: <span id="dpa-p"></span></li>
-          <li class="stats" id="speed-dmg">{% trans "Attack speed" %}: <span id="sd-p"></span></li>
-          <li class="stats" id="dps">{% trans "Damage per second" %}: <span id="dps-p"></span></li>
-          <li class="stats" id="range">{% trans "Attack range" %}: <span id="r-p"></span></li>
-        </ul>
-      </div>
-      <div class="w-100"></div>
-      {% if h.title_en == 'Deathwing' %}
-        {% include 'heroes/includes/deathwing/ability.html' %}
-      {% elif  h.title_en == 'Valeera' %}
-        {% include 'heroes/includes/valeera/ability.html' %}
-      {% elif h.title_en == 'Greymane' %}
-        {% include 'heroes/includes/greymane/ability.html' %}
-      {% elif h.title_en == 'Abathur' %}
-        {% for i in "12" %}
-        <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down'%}">
-          <ul>
-            <li>
-              <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
-            </li>
-            <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
-            </li>
-            <li>
-              <h3>{% cycle h.ability1 h.ability2%}</h3><em>{% cycle h.ab_desc1 h.ab_desc2%}</em>
-            </li>
-          </ul>
-        </div>
-        {% endfor %}
-        <div class="col zero"></div>
-      {% else %}
-        {% for i in "123" %}
-        <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down' 'right' %}">
-          <ul>
-            <li>
-              <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="" class="img-ab">
-            </li>
-            <li><img src="https://renattop.github.io/image/heroes/{{h.title_en}}/a{{i}}.png" alt="" class="mab">
-            </li>
-            <li>
-              <h3>{% cycle h.ability1 h.ability2 h.ability3 %}</h3><em>{% cycle h.ab_desc1 h.ab_desc2 h.ab_desc3 %}</em>
-            </li>
-          </ul>
-        </div>
-        {% endfor %}
-      {% endif %}
-      <div class="w-100"></div>
-      {% if h.title_en == 'Deathwing' or h.title_en == 'Tracer' %}
-        {% for i in '1' %}
-        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
-          <ul>
-            <li>
-              <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
-            </li>
-            <li>
-              <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
-            </li>
-            <li>
-              <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
-            </li>
-          </ul>
-        </div>
-        {% endfor %}
-        <div class="col zero"></div>
-      {% else %}
-        {% for i in '12' %}
-        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
-          <ul>
-            <li>
-              <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="" class="img-ab">
-            </li>
-            <li>
-              <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/h{{i}}.png" alt="" class="mab">
-            </li>
-            <li>
-              <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
-            </li>
-          </ul>
-        </div>
-        {% endfor %}
-      {% endif %}
-      <div class="col" id="ab" data-aos="fade-{{aos3}}">
-        <ul>
-          <li>
-            <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/ab.png" alt="" class="mab">
-          </li>
-          <li>
-            <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <h2>{% trans "Other heroes" %}</h2>
-      <div class="randomHeroes"></div>
-      {% if LANGUAGE_CODE == 'ru' %}
-        <script src="{% static 'heroes/js/randomHeroes_ru.js' %}"></script>
-      {% else %}
-        <script src="{% static 'heroes/js/randomHeroes_en.js' %}"></script>
-      {% endif %}
-    </div>
-        {% include 'site/disqus.html' %}
-    </main>
-    <footer>
-        {% include 'site/footer.html' %}
-    </footer>
-    <a class="back_to_top"></a>
-    <script src="{% static 'home/js/allheroes.js' %}"></script>
-    {% include 'heroes/includes/hero.html' %}
-    <script src="{% static 'home/js/aos.js' %}"></script>
-    {% endwith %}
-    {% include 'site/main_js.html' %}
-    <script src="{% static 'heroes/js/jquery.lookingfor.min.js' %}"></script>
-    <script src="{% static 'heroes/js/mixitup.min.js' %}"></script>
-    <script src="{% static 'heroes/js/mixitup-multifilter.min.js' %}"></script>
-    <script src="{% static 'heroes/js/heroes.js' %}"></script>
-    <script src="{% static 'heroes/js/switch.js' %}"></script>
-</body>
+    <body>
+        {% include 'site/preloader.html' %}
+        <header>
+        {% include 'site/navbar.html' %}
+        </header>
+        <main class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{h.title}}</h1>
+                    <h3>{{h.title_min}}</h3>
+                    <em>{{h.description}}</em>
+                </div>
+                
+                {% if h.title_en == 'Valeera' %}
+                    {% include 'heroes/includes/valeera/bg.html' %}
+                {% elif h.title_en == 'Greymane' %}
+                    {% include 'heroes/includes/greymane/bg.html' %}
+                {% else %}
+                <div class="col-12" data-aos="zoom-in">
+                    <video src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/bg.webm" class="header" loop muted autoplay 
+                            poster="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/bg.jpg">
+                    </video>
+                </div>
+                {% endif %}
+
+                {% if h.title_en == 'Valeera' %}
+                    {% include 'heroes/includes/valeera/bgm.html' %}
+                {% elif h.title_en == 'Greymane' %}
+                    {% include 'heroes/includes/greymane/bgm.html' %}
+                {% else %}
+                <div class="col-12" data-aos="zoom-in">
+                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/bgm.jpg" alt="Background" loading="lazy" class="lazyload headerm">
+                </div>
+                {% endif %}
+
+                {% if h.title_en == 'Deathwing' or h.title_en == 'Valeera' or h.title_en == 'Greymane' or h.title_en == 'Cho' or h.title_en == 'Gall' %}
+                    {% include 'heroes/includes/special_btn.html' %}
+                {% endif %}
+                <div class="fav_buttons">
+                    <td>
+                        <form method='POST' action="{% url 'home:favourite_hero' hero.id %}" id="add_fav">
+                                {% csrf_token %}
+                                <input type='hidden' name='hero' value={{ hero.id }}>
+                                <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method='POST' action="{% url 'home:del_favourite_hero' hero.id %}" id="del_fav">
+                            {% csrf_token %}
+                            <input type='hidden' name='hero' value={{ hero.id }}>
+                            <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
+                        </form>
+                    </td>
+                </div>
+                <div class="w-100"></div>
+                <div class="col" data-aos="fade-left">
+                    <ul>
+                        <li>
+                            <span class="text" id="dmg">{% trans "Damage" %}</span>
+                        </li>
+                        <li>
+                            <img data-src="https://renattop.github.io/project_HOTS/image/home/stat-icons.png" alt="stat-icon" loading="lazy" class="lazyload stat-icon">
+                            {% for i in h.points.d %}
+                            <p class="stats-damage">&#8291;</p>
+                            {% endfor %}
+                        </li>
+                        <li>
+                            <span class="text" id="spt">{% trans "Utility" %}</span>
+                        </li>
+                        <li>
+                            <img data-src="https://renattop.github.io/project_HOTS/image/home/stat-icons0.png" alt="stat-icon" loading="lazy" class="lazyload stat-icon">
+                            {% for i in h.points.s %}
+                            <p class="stats-support">&#8291;</p>
+                            {% endfor %}
+                        </li>
+                        <li>
+                            <span class="text" id="hp">{% trans "Survivability" %}</span>
+                        </li>
+                        <li>
+                        <img data-src="https://renattop.github.io/project_HOTS/image/home/stat-icons1.png" alt="stat-icon" loading="lazy" class="lazyload stat-icon">
+                        {% for i in h.points.h %}
+                        <p class="stats-hp">&#8291;</p>
+                        {% endfor %}
+                        </li>
+                        <li>
+                            <span class="text" id="dfct">{% trans "Complexity" %}</span>
+                        </li>
+                        <li>
+                            <img data-src="https://renattop.github.io/project_HOTS/image/home/stat-icons2.png" alt="stat-icon" loading="lazy" class="lazyload stat-icon">
+                            {% for i in h.points.f %}
+                            <p class="stats-difficult">&#8291;</p>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-100 min510"></div>
+                <div class="col" data-aos="fade-left">
+                    <ul>
+                        <li class="bicon">
+                        {{h.hero_type}}
+                        </li>
+                        <li>
+                            <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.hero_type_en}}.png" alt="{{h.hero_type}}" loading="lazy" class="lazyload icon" title="{{h.hero_type}}">
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-100 min1195"></div>
+                <div class="col" data-aos="fade-right">
+                    <ul>
+                        <li class="ab" id="basic">{% trans "Primary Abilities" %}</li>
+                        {% if h.title_en == 'Deathwing' %}
+                            {% include 'heroes/includes/deathwing/ab.html' %}
+                        {% elif h.title_en == 'Valeera' %}
+                            {% include 'heroes/includes/valeera/ab.html' %}
+                        {% elif h.title_en == 'Greymane' %}
+                            {% include 'heroes/includes/greymane/ab.html' %}
+                        {% elif h.title_en == 'Sgt.Hammer' %}
+                            <li>
+                                {% for ab in "12" %}
+                                <a href="#ab{{ab}}"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/a{{ab}}.png" alt="{% trans 'Primary Ability' %} {{ab}}" loading="lazy" class="lazyload base"></a>
+                                {% endfor %}
+                            </li>
+                        {% else %}
+                            <li>
+                                {% for ab in "123" %}
+                                <a href="#ab{{ab}}"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/a{{ab}}.png" alt="{% trans 'Primary Ability' %} {{ab}}" loading="lazy" class="lazyload base"></a>
+                                {% endfor %}
+                            </li>
+                        {% endif %}
+                        <li class="ab" id="heroic">{% trans "Heroic Abilities" %}</li>
+                        <li>
+                            {% if h.title_en == 'Varian' %}
+                                {% for abh in "12" %}
+                                <a href="#h{{abh}}"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="{% trans 'Heroic Abilities' %} {{abh}}" loading="lazy" class="lazyload heroic"></a>
+                                {% endfor %}
+                                <a href="#h3"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/Varian/h3.png" alt="{% trans 'Heroic Abilities' %} 3" loading="lazy" class="lazyload heroic"></a>
+                            {% elif h.title_en == 'Tracer' %}
+                                {% for abh in "1" %}
+                                    <a href="#h{{abh}}"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="{% trans 'Heroic Abilities' %} {{abh}}" loading="lazy" class="lazyload heroic"></a>
+                                {% endfor %}
+                            {% else %}
+                                {% for abh in "12" %}
+                                    <a href="#h{{abh}}"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/h{{abh}}.png" alt="{% trans 'Heroic Abilities' %} {{abh}}" loading="lazy" class="lazyload heroic"></a>
+                                {% endfor %}
+                            {% endif %}
+                        </li>
+                        <li class="ab" id="trait">{% trans "Trait" %}</li>
+                        <li>
+                            <a href="#ab"><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/ab.png" alt="{% trans 'Trait' %}" loading="lazy" class="lazyload base"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-100 min510"></div>
+                <div class="col" data-aos="fade-right">
+                    <ul>
+                        <li class="stats" id="stat-lvl">
+                            {% trans "Lvl" %}: <span class="lvl">0</span>
+                        </li>
+                        <li>
+                            <input type="range" id="lvl" oninput="Lvl()" min="0" max="30" step="1" value="0">
+                        </li>
+                        {% include 'heroes/includes/spec_mana_heroes.html' %}
+                    </ul>
+                </div>
+                <div class="w-100"></div>
+                {% if h.title_en == 'Deathwing' %}
+                    {% include 'heroes/includes/deathwing/ability.html' %}
+                {% elif  h.title_en == 'Valeera' %}
+                    {% include 'heroes/includes/valeera/ability.html' %}
+                {% elif h.title_en == 'Greymane' %}
+                    {% include 'heroes/includes/greymane/ability.html' %}
+                {% elif h.title_en == 'Abathur' or h.title_en == 'Sgt.Hammer' %}
+                    {% for i in "12" %}
+                        <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down'%}">
+                            <ul>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="{% cycle h.ability1 h.ability2%} image" loading="lazy" class="lazyload img-ab">
+                                </li>
+                                <li><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/a{{i}}.png" alt="{% cycle h.ability1 h.ability2%} icon" loading="lazy" class="lazyload mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.ability1 h.ability2%}</h3><em>{% cycle h.ab_desc1 h.ab_desc2%}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                <div class="col zero"></div>
+                {% else %}
+                    {% for i in "123" %}
+                        <div class="col" id="ab{{i}}" data-aos="fade-{% cycle 'left' 'down' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/img-a{{i}}.jpg" alt="{% cycle h.ability1 h.ability2 h.ability3 %} image" loading="lazy" class="lazyload img-ab">
+                                </li>
+                                <li><img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/a{{i}}.png" alt="{% cycle h.ability1 h.ability2 h.ability3 %} icon" loading="lazy" class="lazyload mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.ability1 h.ability2 h.ability3 %}</h3><em>{% cycle h.ab_desc1 h.ab_desc2 h.ab_desc3 %}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div class="w-100"></div>
+                {% if h.title_en == 'Deathwing' or h.title_en == 'Tracer' %}
+                    {% for i in '1' %}
+                        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="{{ h.heroic1 }} image" loading="lazy" class="lazyload img-ab">
+                                </li>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/h{{i}}.png" alt="{{ h.heroic1 }} icon" loading="lazy" class="lazyload mab">
+                                </li>
+                                <li>
+                                    <h3>{{ h.heroic1 }}</h3><em>{{ h.heroic_desc1 }}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    <div class="col zero"></div>
+                {% elif h.title_en == 'Varian' %}
+                    {% for i in '12' %}
+                        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="{% cycle h.heroic1 h.heroic2 %} image" loading="lazy" class="lazyload img-ab">
+                                </li>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/h{{i}}.png" alt="{% cycle h.heroic1 h.heroic2 %} icon" loading="lazy" class="lazyload mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
+                                </li>
+                            </ul>
+                        </div>
+                {% endfor %}
+                <div class="col" id="h3" data-aos="fade-right">
+                    <ul>
+                        <li>
+                            <img data-src="https://renattop.github.io/project_HOTS/image/heroes/Varian/img-h3.jpg" alt="{% trans 'Twin Blades of Fury' %} image" loading="lazy" class="lazyload img-ab">
+                        </li>
+                        <li>
+                            <img data-src="https://renattop.github.io/project_HOTS/image/heroes/Varian/h3.png" alt="{% trans 'Twin Blades of Fury' %} icon" loading="lazy" class="lazyload mab">
+                        </li>
+                        <li>
+                            {% include 'heroes/includes/varian/heroic.html' %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-100"></div>
+                {% else %}
+                    {% for i in '12' %}
+                        <div class="col" id="h{{i}}" data-aos="fade-{% cycle 'left' 'up' 'right' %}">
+                            <ul>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/img-h{{i}}.jpg" alt="{% cycle h.heroic1 h.heroic2 %} image" loading="lazy" class="lazyload img-ab">
+                                </li>
+                                <li>
+                                    <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/h{{i}}.png" alt="{% cycle h.heroic1 h.heroic2 %} icon" loading="lazy" class="lazyload mab">
+                                </li>
+                                <li>
+                                    <h3>{% cycle h.heroic1 h.heroic2 %}</h3><em>{% cycle h.heroic_desc1 h.heroic_desc2 %}</em>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% if h.title_en == 'Varian' %}
+                    <div class="col zero"></div>
+                    <div class="col" id="ab" data-aos="fade-up">
+                        <ul>
+                            <li>
+                                <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/ab.png" alt="{{h.ab_trait}} icon" loading="lazy" class="lazyload mab">
+                            </li>
+                            <li>
+                                <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col zero"></div>
+                {% else %}
+                    <div class="col" id="ab" data-aos="fade-right">
+                        <ul>
+                            <li>
+                                <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/ab.png" alt="{{h.ab_trait}} icon" loading="lazy" class="lazyload mab">
+                            </li>
+                            <li>
+                                <h3>{{h.ab_trait}}</h3><em>{{h.trait_desc}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                <h2>{% trans "Other heroes" %}</h2>
+                <div class="randomHeroes"></div>
+                {% if LANGUAGE_CODE == 'ru' %}
+                    <script src="{% static 'heroes/js/randomHeroes_ru.js' %}"></script>
+                {% else %}
+                    <script src="{% static 'heroes/js/randomHeroes_en.js' %}"></script>
+                {% endif %}
+            </div>
+            {% include 'site/disqus.html' %}
+        </main>
+        <footer>
+            {% include 'site/footer.html' %}
+        </footer>
+        <a class="back_to_top"></a>
+        <script src="{% static 'home/js/allheroes.js' %}"></script>
+        {% include 'heroes/includes/hero.html' %}
+        <script src="{% static 'home/js/aos.js' %}"></script>
+        {% endwith %}
+        {% include 'site/main_js.html' %}
+        <script>
+            const userFavHeroes = "{{user.favorite_heroes.all}}";
+            if (userFavHeroes.includes('{{hero.title}}')) {
+                $("#add_fav").hide();
+                $("#del_fav").show();
+            } else {
+                $("#add_fav").show();
+                $("#del_fav").hide();
+            }
+        </script>
+        <script src="{% static 'heroes/js/switch.js' %}"></script>
+    </body>
+
 </html>

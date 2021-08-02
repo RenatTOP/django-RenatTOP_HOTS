@@ -1,7 +1,6 @@
 /* LOGIN FORM */
 
 .login {
-    background: #f8f8f8;
     height: auto;
 }
 
@@ -24,8 +23,10 @@
 }
 
 .login #container {
-    background: #fff;
-    border: 1px solid #eaeaea;
+    background: linear-gradient(120deg,  #110020, #19012e, #1a0338);
+    background-size: 400% 400%;
+    animation: Gradient 8s ease infinite;
+    border: 1px solid white;
     border-radius: 4px;
     overflow: hidden;
     width: 28em;

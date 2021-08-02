@@ -1,6 +1,7 @@
 {% extends "registration/base.html" %}
 {% load i18n static %}
 {% block css %}{% static 'home/css/form.css' %}{% endblock %}
+{% block title %}{% trans "Registration" %}{% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
         <h1>{% trans "You're already logged in." %}</h1>
@@ -38,6 +39,4 @@
         <button type="submit">{% trans "Sign up" %}</button>
     </form>
     {% endif %}
-  </body>
-</html>
 {% endblock %}

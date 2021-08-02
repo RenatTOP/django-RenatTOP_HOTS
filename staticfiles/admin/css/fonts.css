@@ -18,3 +18,8 @@
     font-weight: 300;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'MinionPro-SemiboldIt';
+    src: url('../font/MinionPro-SemiboldIt.otf');
+}

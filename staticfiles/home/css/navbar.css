@@ -1,122 +1,147 @@
 .navbar-light .navbar-toggler-icon {
-   background: url(https://renattop.github.io/image/home/gamburger.svg) !important;
+    background: url(https://renattop.github.io/project_HOTS/image/home/gamburger.svg) !important;
 }
 
 .navbar-light .navbar-toggler {
-   border-color: transparent !important;
+    border-color: transparent !important;
 }
 
 .navbar {
-   background: linear-gradient(-45deg, #04043a, #12093d, #210644, #2c0546, #340444);
-   background-size: 400% 400%;
-   -webkit-animation: Gradient 8s ease infinite;
-   -moz-animation: Gradient 8s ease infinite;
-   animation: Gradient 8s ease infinite;
-   z-index: 2;
-   position: fixed !important;
-   max-width: 2500px;
-   width: 100%;
-   opacity: 0.98;
-   border-radius: 0px 0px 25px 100px;
+    background: linear-gradient(-45deg, #04043a, #12093d, #210644, #2c0546, #340444);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 8s ease infinite;
+    -moz-animation: Gradient 8s ease infinite;
+    animation: Gradient 8s ease infinite;
+    z-index: 2;
+    position: fixed !important;
+    max-width: 2500px;
+    width: 100%;
+    opacity: 0.98;
+    border-radius: 0px 0px 25px 100px;
 }
 
-@media(min-width:769px) {
-   .navbar.scroll {
-      width: 100%;
-      height: 70px;
-      padding-left: 50px !important;
-   }
-   .navbar.scroll>.navbar-brand img {
-      width: 200px !important;
-      height: 100px !important;
-   }
+@media(min-width:1050px) {
+    .navbar.scroll {
+        width: 100%;
+        height: 70px;
+        padding-left: 50px !important;
+    }
+    .navbar.scroll>.navbar-brand img {
+        width: 200px !important;
+        height: 100px !important;
+    }
 }
 
-@media(max-width:768px) {
-   .navbar.scroll>.navbar-brand img {
-      width: 120px !important;
-      height: 60px !important;
-   }
-   .navbar-collapse {
-      padding-left: 70px;
-   }
+@media(max-width:1050px) {
+    .navbar.scroll>.navbar-brand img {
+        width: 120px !important;
+        height: 60px !important;
+    }
+    .navbar-collapse {
+        padding-left: 70px;
+    }
+
+    .auth-btn {
+        max-width: 165px;
+    }
 }
 
 .auth a {
-   text-decoration: none !important;
-   color: white !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.auth-btn {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px !important;
+    background: linear-gradient(-45deg, #04043a, #12093d, #210644, #2c0546, #340444);
+    background-size: 300% 300%;
+    -webkit-animation: Gradient 8s ease infinite;
+    -moz-animation: Gradient 8s ease infinite;
+    animation: Gradient 8s ease infinite;
+    color: white;
+    border-color: #210644;
+}
+
+@media(max-width:1148px) {
+    .auth-btn {
+        height: 100% !important;
+    }
 }
 
 .lang {
-   text-decoration: none !important;
-   color: white !important;
+    text-decoration: none !important;
+    color: white !important;
 }
 
 .nav-link, .nav-lang {
-   color: white !important;
+    color: white !important;
 }
 
 .nav-link:hover {
-   text-shadow: 0 0 1rem #009cff;
+    text-shadow: 0 0 1rem #009cff;
 }
 
 #logo {
-   border: none !important;
-   box-shadow: none;
-   border-radius: 0px;
-   height: 130px;
-   width: 300px;
+    border: none !important;
+    box-shadow: none;
+    border-radius: 0px;
+    height: 130px;
+    width: 300px;
 }
 
 @media (max-width: 450px) {
-   #logo {
-      box-shadow: none;
-      border-radius: 0px;
-      height: 65px;
-      width: 150px;
-   }
+    #logo {
+        box-shadow: none;
+        border-radius: 0px;
+        height: 65px;
+        width: 150px;
+    }
 }
 
 .navbar-nav {
-   margin-block-start: 0em!important;
-   margin-block-end: 0em!important;
+    margin-block-start: 0em!important;
+    margin-block-end: 0em!important;
 }
 
 .dropdown-menu {
-   background: #191970!important;
-   background-size: 100% !important;
-   opacity: 90% !important;
+    background: #191970!important;
+    background-size: 100% !important;
+    opacity: 90% !important;
 }
 
 .dropdown-item {
-   text-transform: uppercase;
-   background: #191970!important;
-   color: #fff!important;
+    text-transform: uppercase;
+    background: #191970!important;
+    color: #fff!important;
 }
 
 .dropdown-item:hover {
-   font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 #navbarDropdown {
-   color: #cce5ff;
-   font-size: 2rem;
-   text-transform: uppercase;
+    color: #cce5ff;
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-   font-size: 2rem;
-   text-transform: uppercase;
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 ul {
-   list-style-type: none !important;
+    list-style-type: none !important;
 }
 
 .flag {
-   display: inline-block;
-   max-width: 25px !important;
-   max-height: 30px !important;
-   width: 100%;
-   height: 100%;
+    display: inline-block;
+    max-width: 25px !important;
+    max-height: 30px !important;
+    width: 100%;
+    height: 100%;
 }

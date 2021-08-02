@@ -1,6 +1,6 @@
 footer {
     background: linear-gradient(#08000f, #150c3b);
-    height: 200px;
+    height: 220px;
 }
 
 @media(max-width:630px) {
@@ -47,7 +47,7 @@ footer {
 .copyright {
     position: absolute;
     text-align: left;
-    padding-left: 3%;
+    padding-left: 4%;
     top: 90%;
     color: white;
 }
@@ -55,51 +55,46 @@ footer {
 .contacts {
     position: absolute;
     top: 90%;
-    left: 89%;
+    left: 92%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
     color: white;
 }
 
 .terms {
     position: absolute;
     top: 50%;
-    padding-left: 3%;
+    padding-left: 4%;
 }
 
 .map {
     position: absolute;
     top: 50%;
-    left: 89%;
-}
-
-@media(max-width:800px) {
-    .contacts {
-        left: 70%;
-    }
-    .map {
-        left: 70%;
-    }
+    left: 92%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
 }
 
 @media(max-width:630px) {
     .terms {
         top: 160%;
         left: 50%;
-        margin-left: -120px;
+        transform: translate(-50%, -50%);
     }
     .copyright {
         top: 200%;
         left: 50%;
-        margin-left: -203px;
+        transform: translate(-50%, -50%);
     }
     .map {
         top: 130%;
         left: 50%;
-        margin-left: -49px;
+        transform: translate(-50%, -50%);
     }
     .contacts {
         top: 100%;
         left: 50%;
-        margin-left: -60px;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -107,10 +102,7 @@ footer {
     .mobail {
         display: block;
     }
-    .copyright {
-        text-align: center;
-        margin-left: -155px;
-    }
+
 }
 
 .mobail {

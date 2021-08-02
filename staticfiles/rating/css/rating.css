@@ -3,7 +3,7 @@ body {
     max-width: 2500px;
     display: block !important;
     margin: 0 auto !important;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 div {
@@ -26,7 +26,7 @@ div {
 }
 
 a {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 h1 {
@@ -65,17 +65,17 @@ p {
 }
 
 .head {
-    background: url(https://renattop.github.io/image/game/rating_matches/bg.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/rating_matches/bg.jpg) top center no-repeat;
     background-size: cover;
 }
 
 .basics {
-    background: url(https://renattop.github.io/image/game/rating_matches/bg2.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/rating_matches/bg2.jpg) top center no-repeat;
     background-size: cover;
 }
 
 .draft {
-    background: url(https://renattop.github.io/image/game/rating_matches/bg3.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/rating_matches/bg3.jpg) top center no-repeat;
     background-size: cover;
     max-height: 600px;
 }
@@ -94,14 +94,14 @@ p {
 
 @media (max-width:925px) {
     .basics {
-        background: url(https://renattop.github.io/image/game/rating_matches/bg2m.png) top center no-repeat;
+        background: url(https://renattop.github.io/project_HOTS/image/game/rating_matches/bg2m.png) top center no-repeat;
         background-size: 1000px;
     }
 }
 
 @media (max-width:925px) {
     .draft {
-        background: url(https://renattop.github.io/image/game/rating_matches/bg3m.jpg) center no-repeat;
+        background: url(https://renattop.github.io/project_HOTS/image/game/rating_matches/bg3m.jpg) center no-repeat;
         background-size: cover;
     }
 }

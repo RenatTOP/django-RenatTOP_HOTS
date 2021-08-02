@@ -3,7 +3,7 @@ body {
     max-width: 2000px;
     display: block !important;
     margin: 0 auto !important;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 div {
@@ -11,7 +11,7 @@ div {
 }
 
 .head {
-    background: url(https://renattop.github.io/image/game/modes/mode-game.jpg) center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/mode-game.jpg) center no-repeat;
 }
 
 .header {
@@ -44,7 +44,7 @@ div {
 }
 
 a {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 h1 {
@@ -81,10 +81,10 @@ h4 {
 
 @media (max-width:1110px) {
     .quick {
-        background: url(https://renattop.github.io/image/game/modes/quick-gameme.jpg) no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/quick-gameme.jpg) no-repeat !important;
     }
     .brawl {
-        background: url(https://renattop.github.io/image/game/modes/brawlme.jpg) no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/brawlme.jpg) no-repeat !important;
     }
 }
 
@@ -99,23 +99,23 @@ h4 {
         padding-right: 0 !important;
     }
     .head {
-        background: url(https://renattop.github.io/image/game/modes/mode-game.jpg) top center no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/mode-game.jpg) top center no-repeat !important;
         background-size: 80% !important;
     }
     .quick {
-        background: url(https://renattop.github.io/image/game/modes/quick-gamem.jpg) top center no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/quick-gamem.jpg) top center no-repeat !important;
         background-size: 80% !important;
     }
     .ai {
-        background: url(https://renattop.github.io/image/game/modes/ii.jpg) top center no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/ii.jpg) top center no-repeat !important;
         background-size: 60% !important;
     }
     .ai_en {
-        background: url(https://renattop.github.io/image/game/modes/iien.jpg) top center no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/iien.jpg) top center no-repeat !important;
         background-size: 60% !important;
     }
     .brawl {
-        background: url(https://renattop.github.io/image/game/modes/brawlm.jpg) top center no-repeat !important;
+        background: url(https://renattop.github.io/project_HOTS/image/game/modes/brawlm.jpg) top center no-repeat !important;
         background-size: 80% !important;
     }
     .nexus {
@@ -125,23 +125,23 @@ h4 {
 }
 
 .big-con {
-    background: url(https://renattop.github.io/image/game/modes/divider.png) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/divider.png) top center no-repeat;
 }
 
 .ai {
-    background: url(https://renattop.github.io/image/game/modes/ii.jpg) right top no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/ii.jpg) right top no-repeat;
 }
 
 .ai_en {
-    background: url(https://renattop.github.io/image/game/modes/iien.jpg) right top no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/iien.jpg) right top no-repeat;
 }
 
 .quick {
-    background: url(https://renattop.github.io/image/game/modes/quick-game.jpg) no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/quick-game.jpg) no-repeat;
 }
 
 .brawl {
-    background: url(https://renattop.github.io/image/game/modes/brawl.jpg) no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/brawl.jpg) no-repeat;
 }
 
 .nexus {
@@ -151,7 +151,7 @@ h4 {
 }
 
 .own-game {
-    background: url(https://renattop.github.io/image/game/modes/own-game-b.jpg) bottom center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/modes/own-game-b.jpg) bottom center no-repeat;
     padding-bottom: 2em;
 }
 

@@ -4,7 +4,7 @@ body {
     display: block !important;
     margin: 0 auto !important;
     overflow-x: hidden;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 div {
@@ -52,6 +52,11 @@ div {
         width: 100%;
         height: auto;
     }
+}
+
+.col-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 .col-3 {
@@ -136,7 +141,7 @@ div {
 }
 
 a {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 h1 {
@@ -157,7 +162,8 @@ h2 {
 
 h3 {
     color: #cce5ff !important;
-    font-size: calc(1em + 1.6vw) !important;;
+    font-size: calc(1em + 1.6vw) !important;
+    ;
     text-shadow: 0 0 1rem #009cff;
     text-align: center;
     text-transform: none;
@@ -210,7 +216,6 @@ h3 {
     line-height: 1.2;
     z-index: 2;
 }
-
 
 [data-tooltip]:hover:before, [data-tooltip]:hover:after {
     visibility: visible;
@@ -437,7 +442,7 @@ p {
     max-width: 100px;
     width: auto;
     height: auto;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 .ab, .bicon {
@@ -459,7 +464,7 @@ p {
     max-width: 100px;
     width: auto;
     height: auto;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 .img-ab {
@@ -502,6 +507,12 @@ p {
     }
 }
 
+.fav_buttons {
+    display: flex;
+    margin-top: 15px !important;
+    margin: auto;
+}
+
 .btn_add {
     font-weight: 700;
     color: white;
@@ -515,8 +526,8 @@ p {
 
 .btn_add:hover {
     background: rgb(53, 167, 110);
-
 }
+
 .btn_add:active {
     background: rgb(53, 167, 110);
     box-shadow: 0 3px rgb(27, 97, 62) inset;
@@ -535,8 +546,8 @@ p {
 
 .btn_del:hover {
     background: rgb(145, 43, 39);
-
 }
+
 .btn_del:active {
     background: rgb(145, 43, 39);
     box-shadow: 0 3px rgb(90, 26, 24) inset;
@@ -547,13 +558,11 @@ p {
 }
 
 .switch {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
+    padding: 5px 70px 5px 70px;
     max-width: 300px;
     max-height: 50px;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     background: linear-gradient(to bottom, #4f6cff, #48069c);
     text-align: center;
     color: #fff !important;
@@ -569,4 +578,9 @@ p {
     font-size: 1.9rem;
     cursor: pointer !important;
     box-shadow: 0px 0px 40px #9640fe;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center;
 }

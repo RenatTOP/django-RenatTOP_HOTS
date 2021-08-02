@@ -1,0 +1,54 @@
+{% load i18n %}
+{% if h.title_en == 'Alarak' or h.title_en == 'Butcher' or h.title_en == 'Kerrigan' or h.title_en == 'Zeratul' or h.title_en == 'Dehaka' or h.title_en == 'Imperius' or h.title_en == 'Malthael' or h.title_en == 'leoric' or h.title_en == 'Rexxar' or h.title_en == 'Thrall' or h.title_en == 'Xul' or h.title_en == 'Ana' or h.title_en == 'Deckard' or h.title_en == 'Kharazim' or h.title_en == 'LiLi' %}
+    #mana6,
+    #cooldown6 {
+        display: none;
+    }
+{% elif h.title_en == 'Deathwing' or h.title_en == 'Chen' or h.title_en == 'Illidan' or h.title_en == 'Murky' or h.title_en == 'Samuro' or h.title_en == 'gazlowe' or h.title_en == 'Lt.Morales' or h.title_en == 'Zarya' or h.title_en == 'Tracer' %}
+    #mana,
+    #regen-m {
+        display: none;
+    }
+    .ab-mana {
+        font-size: 0px !important;
+    }
+{% elif h.title_en == 'D.Va' or h.title_en == 'Sonya' %}
+    #mana,
+    #regen-m {
+        display: none;
+    }
+    .ab-mana {
+        font-size: 0px !important;
+    }
+    #mana6,
+    #cooldown6 {
+        display: none;
+    }
+{% elif h.title_en == 'Maiev' or h.title_en == 'Qhira' or h.title_en == 'Anduin'%}
+    #mana6 {
+        font-size: 0px !important;
+    }
+{% elif h.title_en == 'Valeera' %}
+    #mana,
+    #regen-m {
+        display: none;
+    }
+    #mana4,
+    #mana5,
+    #mana6 {
+        font-size: 0px !important;
+    }
+{% elif h.title_en == 'Lucio' %}
+    #mana2,
+    #mana6 {
+        font-size: 0px !important;
+    }
+{% elif h.title_en == 'Alexstrasza' %}
+    #mana1 {
+        font-size: 0px !important;
+    }
+{% elif h.title_en == 'Cho' or h.title_en == 'Gall' %}
+    .source {
+        display: none !important;
+    }
+{% endif %}

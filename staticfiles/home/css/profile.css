@@ -2,15 +2,8 @@ body {
     background-color: #08000f !important;
     max-width: 2500px;
     margin: 0 auto !important;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
     overflow-x: hidden;
-}
-
-.avatar {
-    display: block;
-    margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 20px;
 }
 
 h1 {
@@ -19,6 +12,7 @@ h1 {
     text-shadow: 0 0 1rem #009cff;
     text-align: center;
 }
+
 h2 {
     font-size: calc(0.9em + 1.1vw) !important;
     color: #cce5ff !important;
@@ -26,7 +20,8 @@ h2 {
     padding-top: 10px;
     text-align: center;
 }
-h3{
+
+h3 {
     font-size: calc(0.8em + 1vw) !important;
     color: #cce5ff !important;
     text-shadow: 0 0 1rem #009cff;
@@ -34,7 +29,7 @@ h3{
     text-align: center;
 }
 
-h4{
+h4 {
     font-size: calc(0.8em + 1vw) !important;
     color: #cce5ff !important;
     text-shadow: 0 0 1rem #009cff;
@@ -50,6 +45,27 @@ h5 {
     text-align: center;
 }
 
+.avatar {
+    display: block;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    max-width: 250px;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    border: 2.3px solid #88b8ff;
+    box-shadow: 0 0 10px rgba(51, 153, 250);
+}
+
+.admin_link {
+    margin-top: 50px;
+}
+
+.row.item_container {
+    margin-top: 20vh;
+}
+
 .col {
     text-align: center;
     color: #cce5ff;
@@ -60,10 +76,10 @@ h5 {
     width: 140px;
     height: 140px;
     border: 2.3px solid #88b8ff;
-    -webkit-box-shadow: 0 0 10px rgba(51,153,255,.5);
-    box-shadow: 0 0 10px rgba(51,153,255,.5);
+    -webkit-box-shadow: 0 0 10px rgba(51, 153, 255, .5);
+    box-shadow: 0 0 10px rgba(51, 153, 255, .5);
     border-radius: 100px;
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 .rare img:hover {
@@ -97,6 +113,7 @@ h5 {
 .raz div {
     float: right;
 }
+
 .raz div:nth-of-type(odd) {
     float: left;
 }

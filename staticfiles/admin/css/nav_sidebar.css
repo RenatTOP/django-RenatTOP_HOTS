@@ -12,8 +12,8 @@
     justify-content: center;
     flex: 0 0 23px;
     width: 23px;
-    border-right: 1px solid #eaeaea;
-    background-color: #ffffff;
+    border: none;
+    background: linear-gradient(0deg, #210644, #2c0546, #340444);
     cursor: pointer;
     font-size: 20px;
     color: #447e9b;
@@ -35,9 +35,8 @@
     flex: 0 0 275px;
     left: -276px;
     margin-left: -276px;
-    border-top: 1px solid transparent;
-    border-right: 1px solid #eaeaea;
-    background-color: #ffffff;
+    border: 1px solid #2c0e47;
+    background-color: transparent;
     overflow: auto;
 }
 
@@ -91,7 +90,7 @@
 }
 
 #nav-sidebar .current-model {
-    background: #ffc;
+    background:  #08000f;
 }
 
 @media (max-width: 767px) {

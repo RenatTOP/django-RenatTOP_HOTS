@@ -12,6 +12,8 @@
     <style>
         .container-fluid {
             background: url({{bg.big_pictures_url.b}}) top center no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
         }
     </style>
 </head>
@@ -30,7 +32,7 @@
             <div class="col">
                 <ul class="title_min">
                     <li>
-                        <img src="{{bg.pictures_url.p1}}" alt="" class="obj">
+                        <img data-src="{{bg.pictures_url.p1}}" alt="{{bg.title_min1}}" loading="lazy" class="lazyload obj">
                     </li>
                     <li>
                         <h3>{{bg.title_min1}}</h3>
@@ -41,7 +43,7 @@
             <div class="col">
                 <ul class="title_min">
                     <li>
-                        <img src="{{bg.pictures_url.p2}}" alt="" class="obj">
+                        <img data-src="{{bg.pictures_url.p2}}" alt="{{bg.title_min2}}" loading="lazy" class="lazyload obj">
                     </li>
                     <li>
                         <h3>{{bg.title_min2}}</h3>
@@ -52,7 +54,7 @@
             <div class="col">
                 <ul class="title_min">
                     <li>
-                        <img src="{{bg.pictures_url.p3}}" alt="" class="obj">
+                        <img data-src="{{bg.pictures_url.p3}}" alt="{{bg.title_min3}}" loading="lazy" class="lazyload obj">
                     </li>
                     <li>
                         <h3>{{bg.title_min3}}</h3>
@@ -63,36 +65,29 @@
             <div class="w-100"></div>
             <div class="fav">
                 <td>
-                    <form method='POST' action="{% url 'home:favourite_bg' bg.id %}">
+                    <form method='POST' action="{% url 'home:favourite_bg' bg.id %}" id="add_fav">
                         {% csrf_token %}
                         <input type='hidden' name='hero' value={{ hero.id }}>
                         <button type='submit' class="btn_add">{% trans "Add to Favorites" %}</button>
                     </form>
                 </td>
                 <td>
-                    <form method='POST' action="{% url 'home:del_favourite_bg' bg.id %}">
+                    <form method='POST' action="{% url 'home:del_favourite_bg' bg.id %}" id="del_fav">
                         {% csrf_token %}
                         <input type='hidden' name='hero' value={{ hero.id }}>
                         <button type='submit' class="btn_del">{% trans "Remove from favorites" %}</button>
                     </form>
                 </td>
             </div>
-            <div>
-                <h3>{% trans "Map" %}</h3><img src="{{bg.big_pictures_url.b1}}" alt="" class="image">
-            </div>
-            <div>
-                <img src="{{bg.big_pictures_url.b2}}" alt="" class="image">
-            </div>
-            <div>
-                <img src="{{bg.big_pictures_url.b3}}" alt="" class="image">
-            </div>
             <div class="w-100"></div>
             <div>
-                <img src="{{bg.big_pictures_url.b4}}" alt="" class="image">
+                <h3>{% trans "Map" %}</h3>
+                <img src="{{bg.big_pictures_url.b1}}" alt="" class="image">
             </div>
-            <div>
-                <img src="{{bg.big_pictures_url.b5}}" alt="" class="image">
-            </div>
+                <img data-src="{{bg.big_pictures_url.b2}}" alt="Image 1" loading="lazy" class="lazyload image">
+                <img data-src="{{bg.big_pictures_url.b3}}" alt="Image 2" loading="lazy" class="lazyload image">
+                <img data-src="{{bg.big_pictures_url.b4}}" alt="Image 3" loading="lazy" class="lazyload image">
+                <img data-src="{{bg.big_pictures_url.b5}}" alt="Image 4" loading="lazy" class="lazyload image">
         </div>
         {% endwith %}
             {% include 'site/disqus.html' %}
@@ -102,6 +97,16 @@
     </footer>
     <a class="back_to_top"></a>
     {% include 'site/main_js.html' %}
+    <script>
+        const userFavHeroes = "{{user.favorite_bg.all}}";
+        if (userFavHeroes.includes('{{battleground.title}}')) {
+            $("#add_fav").hide();
+            $("#del_fav").show();
+        } else {
+            $("#add_fav").show();
+            $("#del_fav").hide();
+        }
+    </script>
 </body>
 
 </html>

@@ -4,25 +4,6 @@
 <html lang="{{ LANGUAGE_CODE }}">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167109268-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-167109268-1');
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5HRJ2N7');</script>
-    <!-- End Google Tag Manager -->
     {% include 'site/main_head.html' %}
     <meta name="description" content="{% trans "Home" %} HOTS">
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
@@ -31,15 +12,19 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HRJ2N7" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     {% include 'site/preloader.html' %}
     <header>
     {% include 'site/navbar.html' %}
     </header>
     <main class="container-fluid">
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show">
+                    {{message}}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            {% endfor %}
+        {% endif %}
         <section class="header">
         </section>
         <section class="head">
@@ -74,7 +59,7 @@
                 <div class="col rotation">
                     <div class="col {{h.points.q}}">
                         <a href=" /heroes/{{h.title_en}}">
-                            <img src="https://renattop.github.io/image/heroes/{{h.title_en}}/{{h.title_en}}.png" alt="">
+                            <img data-src="https://renattop.github.io/project_HOTS/image/heroes/{{h.title_en}}/{{h.title_en}}.png" alt="{{h.title}}" loading="lazy" class="lazyload">
                             <h3>{{h.title}}</h3>
                         </a>
                     </div>
@@ -110,8 +95,8 @@
                 </a>
                 </div>
                 <div class="col mode">
-                <a href="/game_modes/#brawl">
-                    <h3>{% trans "Brawl" %}</h3>
+                <a href="/game_modes/#aram">
+                    <h3>ARAM</h3>
                     <p>{% blocktrans %}All Random All Mid. Choose from three Heroes, then battle it out on a chaotic single-lane Battleground.{% endblocktrans %}</p>
                 </a>
                 </div>
@@ -156,6 +141,7 @@
     </footer>
     <a class="back_to_top"></a>
     {% include 'site/main_js.html' %}
+    <script src="https://user-agent.cc/cdn/uainit.js?code=635_bXmCqhoQhfiO"></script>
 </body>
 
 </html>

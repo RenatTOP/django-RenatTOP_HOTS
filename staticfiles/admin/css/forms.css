@@ -88,6 +88,9 @@ form ul.inline li {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 170px;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
+
 }
 
 .aligned ul label {
@@ -250,10 +253,8 @@ fieldset.monospace textarea {
 .submit-row {
     padding: 12px 14px;
     margin: 0 0 20px;
-    background: #f8f8f8;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    text-align: right;
+    background: transparent;
+    text-align: center;
     overflow: hidden;
 }
 

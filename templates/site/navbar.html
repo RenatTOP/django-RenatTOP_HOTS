@@ -2,9 +2,9 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as LANGUAGES %}
 {% get_language_info_list for LANGUAGES as languages %}
-<nav class="navbar navbar-expand-md navbar-light">
-    <a class="navbar-brand" href="{% url 'home:index' %}"><img src="http://renattop.github.io/image/home/logo.png" alt="" id="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{% url 'home:index' %}"><img src="http://renattop.github.io/project_HOTS/image/home/logo.png" alt="" id="logo"></a>
+    <button class="navbar-toggler" type="button" data-nav-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,14 +12,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-nav-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     {% trans "Game" %}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'roles:index' %}">{% trans "Roles" %}</a>
                     <a class="dropdown-item" href="{% url 'game_modes:index' %}">{% trans "Modes" %}</a>
-                    <a class="dropdown-item" href="{% url 'brawl:index' %}">{% trans "Brawl" %}</a>
+                    <a class="dropdown-item" href="{% url 'brawl:index' %}">ARAM</a>
                     <a class="dropdown-item" href="{% url 'battlegrounds:index' %}">{% trans "Battlegrounds" %}</a>
                     <a class="dropdown-item" href="{% url 'rating_matches:index' %}">{% trans "Ranked: Storm League" %}</a>
                 </div>
@@ -36,13 +36,17 @@
         </ul>
         {% if user.is_anonymous %}
             <ul class="auth">
-                    <li><a href="/register/?next={{request.path}}">{% trans "Registration" %}</a></li>
-                    <li><a href="{% url 'login'%}?next={{request.path}}">{% trans "Log in" %}</a></li>
+                    <li><button class="auth-btn"><a href="/register/?next={{request.path}}">{% trans "Sign up" %}</a></button></li>
+            </ul>
+            <ul class="auth">
+                    <li><button class="auth-btn"><a href="{% url 'login'%}?next={{request.path}}">{% trans "Log in" %}</a></button></li>
             </ul>
         {% elif user.is_authenticated and user.username == request.user.username %}
             <ul class="auth">
-                <li><a href="{% url 'logout'%}">{% trans "Log out" %}</a></li>
-                <li><a href="{% url 'change_password' %}">{% trans "Change password" %}</a></li>
+                <li><button class="auth-btn"><a href="{% url 'logout'%}">{% trans "Log out" %}</a></button></li>
+            </ul>
+            <ul class="auth">
+                <li><button class="auth-btn"><a href="{% url 'change_password' %}">{% trans "Change password" %}</a></button></li>
             </ul>
         {% endif %}
         <ul>

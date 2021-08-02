@@ -3,7 +3,7 @@ body {
     max-width: 2000px;
     display: block !important;
     margin: 0 auto !important;
-    cursor: url(https://renattop.github.io/cursors/cursor.cur), default !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/cursor.cur), default !important;
 }
 
 div {
@@ -26,26 +26,26 @@ div {
 }
 
 .head {
-    background: url(https://renattop.github.io/image/game/brawl/intro-bg.jpg) center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/brawl/intro-bg.jpg) center no-repeat;
     background-size: cover;
 }
 
 @media (max-width:800px) {
     .head {
-        background: url(https://renattop.github.io/image/game/brawl/intro-bg-tablet.jpg) top center no-repeat;
+        background: url(https://renattop.github.io/project_HOTS/image/game/brawl/intro-bg-tablet.jpg) top center no-repeat;
         background-size: cover;
     }
 }
 
 @media (max-width:400px) {
     .head {
-        background: url(https://renattop.github.io/image/game/brawl/intro-bg-mobile.jpg) top center no-repeat;
+        background: url(https://renattop.github.io/project_HOTS/image/game/brawl/intro-bg-mobile.jpg) top center no-repeat;
         background-size: cover;
     }
 }
 
 a {
-    cursor: url(https://renattop.github.io/cursors/pointer.cur), pointer !important;
+    cursor: url(https://renattop.github.io/project_HOTS/cursors/pointer.cur), pointer !important;
 }
 
 h1 {
@@ -78,24 +78,24 @@ h2 {
 }
 
 .arena {
-    background: url(https://renattop.github.io/image/game/brawl/new-to-game-bg-top.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/brawl/new-to-game-bg-top.jpg) top center no-repeat;
     background-size: cover;
 }
 
 .mutators {
-    background: url(https://renattop.github.io/image/game/brawl/mutators-bg.jpg) top left no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/brawl/mutators-bg.jpg) top left no-repeat;
     background-size: cover;
 }
 
 @media (max-width:780px) {
     .mutators {
-        background: url(https://renattop.github.io/image/game/brawl/mutators-bgm.jpg) top center no-repeat;
+        background: url(https://renattop.github.io/project_HOTS/image/game/brawl/mutators-bgm.jpg) top center no-repeat;
         background-size: cover;
     }
 }
 
 .heroes {
-    background: url(https://renattop.github.io/image/game/brawl/navbar.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/brawl/navbar.jpg) top center no-repeat;
     background-size: cover;
 }
 
@@ -106,7 +106,7 @@ h2 {
 }
 
 .event {
-    background: url(https://renattop.github.io/image/game/brawl/rewards-bg-top.jpg) top center no-repeat;
+    background: url(https://renattop.github.io/project_HOTS/image/game/brawl/rewards-bg-top.jpg) top center no-repeat;
 }
 
 p {

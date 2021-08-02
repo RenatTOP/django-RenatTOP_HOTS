@@ -1,18 +1,22 @@
 from django import forms
 from heroes.models import Hero
 from django.conf import settings
+from django.contrib import messages
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
+from django.utils.translation import gettext
 from battlegrounds.models import Battleground
 from django.core.mail.message import BadHeaderError
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
-
 def index(request):
-    hero = Hero.objects.filter(title_en__in=['Imperius', 'Deathwing'])
+    hero = Hero.objects.filter(title_en__in=['Malfurion', 'Valla', 'Gazlowe', 'Johanna',
+                                            'Thrall', 'Dehaka', 'Tychus', 'Fenix', 'Whitemane',
+                                            'Sylvanas', 'Malthael', 'Deckard', 'Ana', 'Orphea'])
     context = {'hero': hero}
     return render(request, 'home/index.html', context)
 
@@ -21,7 +25,7 @@ def agreement(request):
     return render(request, 'home/agreement.html')
 
 
-class Username(DetailView):
+class Profile(LoginRequiredMixin,DetailView):
     model = User
     template_name = 'home/profile.html'
     slug_field = 'username'
@@ -65,8 +69,12 @@ def feedback(request):
             try:
                 send_mail(subject, message, sender, recipients)
             except BadHeaderError:
-                return HttpResponse('Invalid header found')
-        return HttpResponse('Thanks for feedback')
+                msg = gettext("Your message has not been sent")
+                messages.error(request, msg)
+                return redirect(request.path)
+        msg = gettext("Your message has been sent")
+        messages.success(request, msg)
+        return redirect('/')
     else:
         form = FeedbackForm()
     return render(request, 'home/feedback.html', {'form': form})

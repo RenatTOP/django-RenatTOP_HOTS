@@ -4,10 +4,12 @@ body {
     margin: 0 auto !important;
     background-color: #08000f !important;
 }
+
 main {
     background: url(/image/404/bg.jpg);
     background-size: cover;
 }
+
 h1 {
     text-align: center;
     color: white !important;

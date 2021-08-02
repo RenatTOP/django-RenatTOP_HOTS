@@ -38,9 +38,9 @@
 }
 
 #changelist .paginator {
-    color: #666;
-    border-bottom: 1px solid #eee;
-    background: #fff;
+    color: #cce5ff;
+    text-shadow: 0 0 1rem #009cff;
+    background: transparent;
     overflow: hidden;
 }
 
@@ -72,7 +72,7 @@
     margin-bottom: 15px;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
-    background: #f8f8f8;
+    background: transparent;
     color: #666;
 }
 
@@ -97,15 +97,15 @@
 }
 
 #changelist #toolbar form input[type="submit"] {
-    border: 1px solid #ccc;
+    border: none;
     font-size: 13px;
     padding: 4px 8px;
     margin: 0;
     vertical-align: middle;
-    background: #fff;
+    background: linear-gradient(-45deg, #210644, #2c0546, #340444);;
     box-shadow: 0 -15px 20px -10px rgba(0, 0, 0, 0.15) inset;
     cursor: pointer;
-    color: #333;
+    color: #cce5ff;
 }
 
 #changelist #toolbar form input[type="submit"]:focus,
@@ -126,8 +126,9 @@
     right: 0;
     z-index: 1000;
     width: 240px;
-    background: #f8f8f8;
-    border-left: none;
+    background: transparent;
+    border: 1px solid #2c0e47;
+    border-radius: 10px;
     margin: 0;
 }
 
@@ -167,7 +168,6 @@
     display: block;
     color: #999;
     text-overflow: ellipsis;
-    overflow-x: hidden;
 }
 
 #changelist-filter li.selected {
@@ -177,7 +177,7 @@
 }
 
 #changelist-filter li.selected a {
-    color: #5b80b2;
+    color: #cce5ff;
 }
 
 #changelist-filter a:focus, #changelist-filter a:hover,
@@ -276,12 +276,12 @@
 }
 
 #changelist table tbody tr.selected {
-    background-color: #FFFFCC;
+    background-color: #08000f;
 }
 
 #changelist .actions {
     padding: 10px;
-    background: #fff;
+    background: transparent;
     border-top: none;
     border-bottom: none;
     line-height: 24px;
@@ -310,7 +310,7 @@
 #changelist .actions select {
     vertical-align: top;
     height: 24px;
-    background: none;
+    background: white;
     color: #000;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -332,16 +332,16 @@
 
 #changelist .actions .button {
     font-size: 13px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
-    background: #fff;
+    background: linear-gradient(90deg, #210644, #2c0546, #340444);;
     box-shadow: 0 -15px 20px -10px rgba(0, 0, 0, 0.15) inset;
     cursor: pointer;
     height: 24px;
     line-height: 1;
-    padding: 4px 8px;
+    padding: 6px 10px;
     margin: 0;
-    color: #333;
+    color: #cce5ff;
 }
 
 #changelist .actions .button:focus, #changelist .actions .button:hover {
