@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'renattop.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'my',
+            'NAME': os.environ['NAME'],
             'USER': os.environ['USER'],
             'PASSWORD': os.environ['PASSWORD'],
             'HOST': os.environ['HOST'],
-            'PORT': '25060',
+            'PORT': os.environ['PORT'],
     }
 }
 
