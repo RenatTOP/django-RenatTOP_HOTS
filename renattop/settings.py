@@ -80,23 +80,23 @@ WSGI_APPLICATION = 'renattop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['NAME'],
-            'USER': os.environ['USER'],
-            'PASSWORD': os.environ['PASSWORD'],
-            'HOST': os.environ['HOST'],
-            'PORT': os.environ['DPORT'],
-    }
-}
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': "db.sqlite3",
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ['NAME'],
+#             'USER': os.environ['USER'],
+#             'PASSWORD': os.environ['PASSWORD'],
+#             'HOST': os.environ['HOST'],
+#             'PORT': os.environ['DPORT'],
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': "db.sqlite3",
+    }
+}
 
 
 # Password validation
