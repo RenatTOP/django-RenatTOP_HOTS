@@ -100,7 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 
-datadump.json
+
 .DS_Store
 *.sqlite3
 media/
